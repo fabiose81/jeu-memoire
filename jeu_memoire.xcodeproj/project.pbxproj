@@ -12,6 +12,10 @@
 		9B643E1E1F6978EA00E2E2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E1C1F6978EA00E2E2BF /* Main.storyboard */; };
 		9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */; };
 		9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E211F6978EA00E2E2BF /* LaunchScreen.storyboard */; };
+		9B643E9B1F6C008B00E2E2BF /* dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E9A1F6C008B00E2E2BF /* dog.png */; };
+		9B643E9D1F6C1D6600E2E2BF /* cat.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E9C1F6C1D6600E2E2BF /* cat.png */; };
+		9B643EBD1F6C219100E2E2BF /* rabbit.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EBC1F6C219100E2E2BF /* rabbit.png */; };
+		9B643EC41F6D672700E2E2BF /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EC31F6D672700E2E2BF /* back.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,10 @@
 		9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B643E221F6978EA00E2E2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B643E241F6978EA00E2E2BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B643E9A1F6C008B00E2E2BF /* dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = dog.png; path = Assets.xcassets/assets/dog.png; sourceTree = "<group>"; };
+		9B643E9C1F6C1D6600E2E2BF /* cat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cat.png; path = Assets.xcassets/assets/cat.png; sourceTree = "<group>"; };
+		9B643EBC1F6C219100E2E2BF /* rabbit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rabbit.png; path = Assets.xcassets/assets/rabbit.png; sourceTree = "<group>"; };
+		9B643EC31F6D672700E2E2BF /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = Assets.xcassets/assets/back.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,10 @@
 				9B643E1A1F6978EA00E2E2BF /* ViewController.swift */,
 				9B643E1C1F6978EA00E2E2BF /* Main.storyboard */,
 				9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */,
+				9B643EC31F6D672700E2E2BF /* back.png */,
+				9B643EBC1F6C219100E2E2BF /* rabbit.png */,
+				9B643E9C1F6C1D6600E2E2BF /* cat.png */,
+				9B643E9A1F6C008B00E2E2BF /* dog.png */,
 				9B643E211F6978EA00E2E2BF /* LaunchScreen.storyboard */,
 				9B643E241F6978EA00E2E2BF /* Info.plist */,
 			);
@@ -96,6 +108,7 @@
 				TargetAttributes = {
 					9B643E141F6978E900E2E2BF = {
 						CreatedOnToolsVersion = 8.2;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -123,9 +136,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B643E9D1F6C1D6600E2E2BF /* cat.png in Resources */,
+				9B643E9B1F6C008B00E2E2BF /* dog.png in Resources */,
 				9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */,
 				9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */,
+				9B643EC41F6D672700E2E2BF /* back.png in Resources */,
 				9B643E1E1F6978EA00E2E2BF /* Main.storyboard in Resources */,
+				9B643EBD1F6C219100E2E2BF /* rabbit.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +277,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = jeu_memoire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.fabiose.jeu-memoire";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiose.jeumemoire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,9 +291,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = jeu_memoire/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.fabiose.jeu-memoire";
+				PRODUCT_BUNDLE_IDENTIFIER = com.fabiose.jeumemoire;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -299,6 +319,7 @@
 				9B643E291F6978EA00E2E2BF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
