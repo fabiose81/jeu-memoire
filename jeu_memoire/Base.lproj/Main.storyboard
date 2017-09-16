@@ -137,6 +137,25 @@
                                     <action selector="actionButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2U-xB-t0h"/>
                                 </connections>
                             </button>
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIS-Sl-XZy">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="firework.png" translatesAutoresizingMaskIntoConstraints="NO" id="163-zb-IOO">
+                                        <rect key="frame" x="240" y="227" width="545" height="425"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4vl-At-bGc">
+                                        <rect key="frame" x="317" y="691" width="390" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="control.png"/>
+                                        <connections>
+                                            <segue destination="1cm-3T-mPa" kind="show" id="25n-VU-n8c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.017023146472987527" green="1" blue="0.93771125547476286" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -167,10 +186,13 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pMI-V0-dql"/>
+                    <connections>
+                        <outlet property="uiButtonPlay" destination="4vl-At-bGc" id="08g-d4-Swt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1320" y="-197"/>
+            <point key="canvasLocation" x="-1320.1171875" y="-197.21815519765738"/>
         </scene>
         <!--Level Two View Controller-->
         <scene sceneID="U3c-aD-pd2">
@@ -370,7 +392,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbQ-b2-YXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="-197"/>
+            <point key="canvasLocation" x="60" y="-197"/>
         </scene>
     </scenes>
     <resources>
@@ -378,5 +400,6 @@
         <image name="back_2.png" width="528" height="640"/>
         <image name="back_3.png" width="320" height="640"/>
         <image name="control.png" width="640" height="578"/>
+        <image name="firework.png" width="595" height="640"/>
     </resources>
 </document>

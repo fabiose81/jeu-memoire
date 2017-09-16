@@ -32,6 +32,8 @@
 		9B643EE41F6DA0B700E2E2BF /* control.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EE31F6DA0B700E2E2BF /* control.png */; };
 		9B643EE61F6DA80000E2E2BF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B643EE51F6DA80000E2E2BF /* MainViewController.swift */; };
 		9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EE71F6DAD1200E2E2BF /* Main.storyboard */; };
+		9B643EEC1F6DB60E00E2E2BF /* balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EEA1F6DB60E00E2E2BF /* balloon.png */; };
+		9B643EED1F6DB60E00E2E2BF /* firework.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EEB1F6DB60E00E2E2BF /* firework.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,8 @@
 		9B643EE31F6DA0B700E2E2BF /* control.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = control.png; path = Assets.xcassets/assets/control.png; sourceTree = "<group>"; };
 		9B643EE51F6DA80000E2E2BF /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		9B643EE81F6DAD1200E2E2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B643EEA1F6DB60E00E2E2BF /* balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = balloon.png; path = Assets.xcassets/assets/balloon.png; sourceTree = "<group>"; };
+		9B643EEB1F6DB60E00E2E2BF /* firework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = firework.png; path = Assets.xcassets/assets/firework.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +101,8 @@
 				9B643EE71F6DAD1200E2E2BF /* Main.storyboard */,
 				9B643E181F6978EA00E2E2BF /* AppDelegate.swift */,
 				9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */,
+				9B643EEA1F6DB60E00E2E2BF /* balloon.png */,
+				9B643EEB1F6DB60E00E2E2BF /* firework.png */,
 				9B643EE31F6DA0B700E2E2BF /* control.png */,
 				9B643EDF1F6D9B6500E2E2BF /* squirrel.png */,
 				9B643EDD1F6D9AEA00E2E2BF /* bee.png */,
@@ -192,6 +198,7 @@
 				9B643ED91F6D96D500E2E2BF /* mouse.png in Resources */,
 				9B643ECE1F6D92E100E2E2BF /* giraffe.png in Resources */,
 				9B643EE41F6DA0B700E2E2BF /* control.png in Resources */,
+				9B643EED1F6DB60E00E2E2BF /* firework.png in Resources */,
 				9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */,
 				9B643EDA1F6D96D500E2E2BF /* pig.png in Resources */,
 				9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */,
@@ -202,6 +209,7 @@
 				9B643EC41F6D672700E2E2BF /* back.png in Resources */,
 				9B643ED01F6D92E100E2E2BF /* leopard.png in Resources */,
 				9B643EE01F6D9B6500E2E2BF /* squirrel.png in Resources */,
+				9B643EEC1F6DB60E00E2E2BF /* balloon.png in Resources */,
 				9B643EBD1F6C219100E2E2BF /* rabbit.png in Resources */,
 				9B643EC61F6D77B400E2E2BF /* back_2.png in Resources */,
 			);

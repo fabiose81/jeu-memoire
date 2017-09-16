@@ -13,9 +13,12 @@ class LevelOneViewController: UIViewController {
     var arrayCard: [UIButton] = []
     
     
+    @IBOutlet weak var uiButtonPlay: UIButton!
+    
     @IBAction func actionButton1(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "dog");
-        compare(sender: sender)
+          performSegue(withIdentifier: "LevelTwoViewController", sender: sender)
+     //   animationFlipFromLeft(card: sender, image: "dog");
+        //compare(sender: sender)
     }
     
     @IBAction func actionButton2(_ sender: UIButton) {
@@ -84,6 +87,8 @@ class LevelOneViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -92,7 +97,7 @@ class LevelOneViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -100,6 +105,6 @@ class LevelOneViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }

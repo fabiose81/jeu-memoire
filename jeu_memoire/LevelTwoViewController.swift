@@ -31,19 +31,16 @@ class LevelTwoViewController: UIViewController {
     @IBAction func actionButton4(_ sender: UIButton) {
         animationFlipFromLeft(card: sender, image: "turtle");
         compare(sender: sender)
-
     }
     
     @IBAction func actionButton5(_ sender: UIButton) {
         animationFlipFromLeft(card: sender, image: "bee");
         compare(sender: sender)
-
     }
     
     @IBAction func actionButton6(_ sender: UIButton) {
         animationFlipFromLeft(card: sender, image: "bee");
         compare(sender: sender)
-
     }
     
     @IBAction func actionButton7(_ sender: UIButton) {
