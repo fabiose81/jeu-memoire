@@ -17,67 +17,28 @@ class LevelThreeViewController: UIViewController {
     
     @IBOutlet weak var uiViewFelicitation: UIView!
     
-    @IBAction func actionButton1(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "hippo");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton2(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "hippo");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton3(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "mouse");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton4(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "pig");
+    @IBAction func actionCard(_ sender: UIButton) {
+        
+        var image: String = "";
+        
+        switch sender.tag {
+            case 1:
+                image = "hippo"
+            case 2:
+                image = "mouse"
+            case 3:
+                image = "cow"
+            case 4:
+                image = "pig"
+            case 5:
+                image = "leopard"
+            default:
+                image = "squirrel"
+        }
+        
+        animationFlipFromLeft(card: sender, image: image);
         compare(sender: sender)
         
-    }
-    
-    @IBAction func actionButton5(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "cow");
-        compare(sender: sender)
-        
-    }
-    
-    @IBAction func actionButton6(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "leopard");
-        compare(sender: sender)
-        
-    }
-    
-    @IBAction func actionButton7(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "mouse");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton8(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "cow");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton9(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "squirrel");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton10(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "squirrel");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton11(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "leopard");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton12(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "pig");
-        compare(sender: sender)
     }
     
     

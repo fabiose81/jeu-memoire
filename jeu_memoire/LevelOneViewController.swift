@@ -17,35 +17,26 @@ class LevelOneViewController: UIViewController {
     @IBOutlet weak var uiViewFelicitation: UIView!
     var player: AVAudioPlayer?
     
-    @IBAction func actionButton1(_ sender: UIButton) {        
-        animationFlipFromLeft(card: sender, image: "dog");
+    
+    @IBAction func actionCard(_ sender: UIButton) {
+        
+        var image: String = "";
+        
+        switch sender.tag {
+            case 1:
+                image = "dog"
+            case 2:
+                image = "rabbit"
+            default:
+                image = "cat"
+        }
+       
+     
+        animationFlipFromLeft(card: sender, image: image);
         compare(sender: sender)
+        
     }
     
-    @IBAction func actionButton2(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "rabbit");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton3(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "cat");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton4(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "rabbit");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton5(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "dog");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton6(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "cat");
-        compare(sender: sender)
-    }
     
     private func retournImage(named: String) -> UIImage{
         return UIImage(named: named)!

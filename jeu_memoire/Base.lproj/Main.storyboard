@@ -99,42 +99,42 @@
                                 <rect key="frame" x="574" y="50" width="400" height="400"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
-                                    <action selector="actionButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N4W-xj-0CF"/>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QfM-F4-8Dq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-fe-Ydi" userLabel="card_21">
                                 <rect key="frame" x="50" y="483" width="400" height="400"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
-                                    <action selector="actionButton3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CXl-Lm-D5p"/>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Gf-76-iVa"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHj-hP-Fvs" userLabel="card_22">
                                 <rect key="frame" x="574" y="483" width="400" height="400"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
-                                    <action selector="actionButton4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tpw-d7-gvx"/>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rgu-B0-gaI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-CH-brJ" userLabel="card_31">
                                 <rect key="frame" x="50" y="914" width="400" height="400"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
-                                    <action selector="actionButton5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5t0-cZ-19n"/>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXD-gs-Pd4"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-q8-G1s" userLabel="card_11">
                                 <rect key="frame" x="50" y="50" width="400" height="400"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
-                                    <action selector="actionButton1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4gK-uE-EqQ"/>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJ2-PZ-rxV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poV-7N-Jvk" userLabel="card_33">
                                 <rect key="frame" x="574" y="914" width="400" height="400"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
-                                    <action selector="actionButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2U-xB-t0h"/>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dts-hd-gA9"/>
                                 </connections>
                             </button>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIS-Sl-XZy" userLabel="view_felicitation">
@@ -211,7 +211,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton1:" destination="1cm-3T-mPa" eventType="touchUpInside" id="OkX-WZ-N44"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="w3p-5t-snI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaV-OO-7gL" userLabel="card_12">
@@ -219,7 +219,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton2:" destination="1cm-3T-mPa" eventType="touchUpInside" id="eNw-v8-8d2"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="Xbd-ju-cEt"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-jP-cil" userLabel="card_21">
@@ -227,7 +227,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton3:" destination="1cm-3T-mPa" eventType="touchUpInside" id="y70-7g-N5S"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="RrY-hW-IPC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-Jv-7MT" userLabel="card_22">
@@ -235,7 +235,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton4:" destination="1cm-3T-mPa" eventType="touchUpInside" id="vmJ-xl-PJy"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="rzo-uA-0dd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MPh-9Q-M10" userLabel="card_31">
@@ -243,7 +243,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton5:" destination="1cm-3T-mPa" eventType="touchUpInside" id="hmz-X1-QQr"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="BsD-ff-wgA"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUX-0k-fXJ" userLabel="card_32">
@@ -251,7 +251,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton6:" destination="1cm-3T-mPa" eventType="touchUpInside" id="LDG-HB-h6C"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="s9R-PX-JO6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-2N-cA6" userLabel="card_41">
@@ -259,7 +259,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton7:" destination="1cm-3T-mPa" eventType="touchUpInside" id="XNt-iE-Ck0"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="yVO-rG-6wl"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNv-bd-l70" userLabel="card_42">
@@ -267,7 +267,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
                                 <connections>
-                                    <action selector="actionButton8:" destination="1cm-3T-mPa" eventType="touchUpInside" id="6f9-LW-okw"/>
+                                    <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="noy-59-MEM"/>
                                 </connections>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-z3-GGQ" userLabel="view_felicitation">
@@ -317,7 +317,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton1:" destination="esZ-6U-HEo" eventType="touchUpInside" id="fRm-H8-Cia"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="2jv-Eu-b4f"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bYF-Zp-V2g" userLabel="card_12">
@@ -325,7 +325,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton2:" destination="esZ-6U-HEo" eventType="touchUpInside" id="bfw-z0-aAq"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="AiI-mI-UwI"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CbF-hj-itc" userLabel="card_13">
@@ -333,7 +333,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton3:" destination="esZ-6U-HEo" eventType="touchUpInside" id="q4j-k0-HBQ"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="Gel-ER-nXL"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI6-kC-fUv" userLabel="card_21">
@@ -341,7 +341,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton4:" destination="esZ-6U-HEo" eventType="touchUpInside" id="Vfm-VV-w4w"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="43N-c8-LNX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxb-8K-Dcf" userLabel="card_22">
@@ -349,7 +349,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton5:" destination="esZ-6U-HEo" eventType="touchUpInside" id="2zO-Bu-rUw"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="hFj-Xu-00W"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jo4-PQ-pep" userLabel="card_23">
@@ -357,7 +357,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton6:" destination="esZ-6U-HEo" eventType="touchUpInside" id="BjO-SE-YQa"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="cea-qf-plO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbm-ld-vAt" userLabel="card_31">
@@ -365,7 +365,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton7:" destination="esZ-6U-HEo" eventType="touchUpInside" id="oqT-FR-eXJ"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="iiE-c1-Jen"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3Z-05-EPs" userLabel="card_32">
@@ -373,7 +373,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton8:" destination="esZ-6U-HEo" eventType="touchUpInside" id="GNq-Mt-e3t"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="qJ0-W1-A59"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-qW-j1F" userLabel="card_33">
@@ -381,7 +381,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton9:" destination="esZ-6U-HEo" eventType="touchUpInside" id="FHk-mA-qlU"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="W22-od-xo6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQi-7F-tsV" userLabel="card_41">
@@ -389,7 +389,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton10:" destination="esZ-6U-HEo" eventType="touchUpInside" id="Se3-Je-Lxq"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="BUS-S4-m8R"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-GD-4dZ" userLabel="card_42">
@@ -397,7 +397,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton11:" destination="esZ-6U-HEo" eventType="touchUpInside" id="YDb-mg-WJd"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="pqO-NX-dpc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-Kj-fzm" userLabel="card_43">
@@ -405,7 +405,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
                                 <connections>
-                                    <action selector="actionButton12:" destination="esZ-6U-HEo" eventType="touchUpInside" id="8hn-k3-fiw"/>
+                                    <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="1w0-28-uSJ"/>
                                 </connections>
                             </button>
                             <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-qs-a6y" userLabel="view_felicitation">

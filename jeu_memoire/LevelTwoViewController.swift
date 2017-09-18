@@ -17,44 +17,24 @@ class LevelTwoViewController: UIViewController {
     
     @IBOutlet weak var uiViewFelicitation: UIView!
     
-    @IBAction func actionButton1(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "giraffe");
+    @IBAction func actionCard(_ sender: UIButton) {
+        
+        var image: String = "";
+        
+        switch sender.tag {
+            case 1:
+                image = "giraffe"
+            case 2:
+                image = "turtle"
+            case 3:
+                image = "monkey"
+            default:
+                image = "bee"
+        }
+        
+        animationFlipFromLeft(card: sender, image: image);
         compare(sender: sender)
-    }
-    
-    @IBAction func actionButton2(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "turtle");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton3(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "monkey");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton4(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "turtle");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton5(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "bee");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton6(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "bee");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton7(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "giraffe");
-        compare(sender: sender)
-    }
-    
-    @IBAction func actionButton8(_ sender: UIButton) {
-        animationFlipFromLeft(card: sender, image: "monkey");
-        compare(sender: sender)
+        
     }
     
     
