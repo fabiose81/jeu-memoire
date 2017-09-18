@@ -74,6 +74,22 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
+    private func animationScaleUp(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }) { (true) in
+            self.animationScaleDown()
+        }
+    }
+    
+    private func animationScaleDown(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            
+        }
+    }
+    
     private func clearArray(){
         self.arrayCard = [];
     }
@@ -90,7 +106,8 @@ class LevelTwoViewController: UIViewController {
                     if(self.count == 4){
                         self.uiViewFelicitation.isHidden = false;
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
-                        self.playSoundFelicitation()
+                        self.animationScaleUp()
+                        //self.playSoundFelicitation()
                     }
                 })
             }else{

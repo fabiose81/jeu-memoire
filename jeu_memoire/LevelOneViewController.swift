@@ -63,6 +63,22 @@ class LevelOneViewController: UIViewController {
         }
     }
     
+    private func animationScaleUp(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 2, y: 2)
+        }) { (true) in
+            self.animationScaleDown()
+        }
+    }
+    
+    private func animationScaleDown(){
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            
+        }
+    }
+    
     private func clearArray(){
         self.arrayCard = [];
     }
@@ -79,7 +95,9 @@ class LevelOneViewController: UIViewController {
                     if(self.count == 3){
                         self.uiViewFelicitation.isHidden = false;
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
-                        self.playSoundFelicitation()
+                        self.animationScaleUp()
+                        
+                       // self.playSoundFelicitation()
                     }
                 })
             }else{
@@ -110,6 +128,7 @@ class LevelOneViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uiViewFelicitation.isHidden = true;
+        self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
                 // Do any additional setup after loading the view.     
     }
