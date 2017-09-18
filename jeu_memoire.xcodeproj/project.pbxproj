@@ -34,6 +34,7 @@
 		9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EE71F6DAD1200E2E2BF /* Main.storyboard */; };
 		9B643EEC1F6DB60E00E2E2BF /* balloon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EEA1F6DB60E00E2E2BF /* balloon.png */; };
 		9B643EED1F6DB60E00E2E2BF /* firework.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EEB1F6DB60E00E2E2BF /* firework.png */; };
+		9B8D5EDB1F70328C0051ABC4 /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B8D5EDA1F70328C0051ABC4 /* applause.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		9B643EE81F6DAD1200E2E2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B643EEA1F6DB60E00E2E2BF /* balloon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = balloon.png; path = Assets.xcassets/assets/balloon.png; sourceTree = "<group>"; };
 		9B643EEB1F6DB60E00E2E2BF /* firework.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = firework.png; path = Assets.xcassets/assets/firework.png; sourceTree = "<group>"; };
+		9B8D5EDA1F70328C0051ABC4 /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = applause.mp3; path = audio/applause.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		9B643E171F6978EA00E2E2BF /* jeu_memoire */ = {
 			isa = PBXGroup;
 			children = (
+				9B8D5EDA1F70328C0051ABC4 /* applause.mp3 */,
 				9B643EE71F6DAD1200E2E2BF /* Main.storyboard */,
 				9B643E181F6978EA00E2E2BF /* AppDelegate.swift */,
 				9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */,
@@ -198,6 +201,7 @@
 				9B643ED91F6D96D500E2E2BF /* mouse.png in Resources */,
 				9B643ECE1F6D92E100E2E2BF /* giraffe.png in Resources */,
 				9B643EE41F6DA0B700E2E2BF /* control.png in Resources */,
+				9B8D5EDB1F70328C0051ABC4 /* applause.mp3 in Resources */,
 				9B643EED1F6DB60E00E2E2BF /* firework.png in Resources */,
 				9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */,
 				9B643EDA1F6D96D500E2E2BF /* pig.png in Resources */,

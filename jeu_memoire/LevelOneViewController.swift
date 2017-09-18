@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class LevelOneViewController: UIViewController {
     
@@ -14,6 +15,7 @@ class LevelOneViewController: UIViewController {
     var count: Int = 0;
     
     @IBOutlet weak var uiViewFelicitation: UIView!
+    var player: AVAudioPlayer?
     
     @IBAction func actionButton1(_ sender: UIButton) {        
         animationFlipFromLeft(card: sender, image: "dog");
@@ -77,6 +79,7 @@ class LevelOneViewController: UIViewController {
                     if(self.count == 3){
                         self.uiViewFelicitation.isHidden = false;
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
+                        self.playSoundFelicitation()
                     }
                 })
             }else{
@@ -87,13 +90,28 @@ class LevelOneViewController: UIViewController {
             }
         }
     }
+    
+    func playSoundFelicitation(){
+        guard let url = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            player = try AVAudioPlayer(contentsOf: url)
+            guard let player = player else { return }
+            
+            player.play()
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uiViewFelicitation.isHidden = true;
-        // Do any additional setup after loading the view.
         
-        
+                // Do any additional setup after loading the view.     
     }
 
     override func didReceiveMemoryWarning() {
