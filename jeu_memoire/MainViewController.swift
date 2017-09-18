@@ -35,7 +35,7 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.view.bringSubview(toFront: self.uiButtonPlay)
-       // fadeIn()
+        //fadeIn()
     }
 
     override func didReceiveMemoryWarning() {

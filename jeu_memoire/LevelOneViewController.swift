@@ -11,14 +11,13 @@ import UIKit
 class LevelOneViewController: UIViewController {
     
     var arrayCard: [UIButton] = []
+    var count: Int = 0;
     
+    @IBOutlet weak var uiViewFelicitation: UIView!
     
-    @IBOutlet weak var uiButtonPlay: UIButton!
-    
-    @IBAction func actionButton1(_ sender: UIButton) {
-          performSegue(withIdentifier: "LevelTwoViewController", sender: sender)
-     //   animationFlipFromLeft(card: sender, image: "dog");
-        //compare(sender: sender)
+    @IBAction func actionButton1(_ sender: UIButton) {        
+        animationFlipFromLeft(card: sender, image: "dog");
+        compare(sender: sender)
     }
     
     @IBAction func actionButton2(_ sender: UIButton) {
@@ -70,9 +69,15 @@ class LevelOneViewController: UIViewController {
         arrayCard.append(sender)
         if arrayCard.count == 2 {
             if arrayCard[0].tag == arrayCard[1].tag{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
+                    self.clearArray();
+                    self.count += 1;
+                    if(self.count == 3){
+                        self.uiViewFelicitation.isHidden = false;
+                        self.view.bringSubview(toFront: self.uiViewFelicitation);
+                    }
                 })
             }else{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
@@ -85,7 +90,7 @@ class LevelOneViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.uiViewFelicitation.isHidden = true;
         // Do any additional setup after loading the view.
         
         

@@ -11,6 +11,9 @@ import UIKit
 class LevelThreeViewController: UIViewController {
     
     var arrayCard: [UIButton] = []
+    var count: Int = 0;
+    
+    @IBOutlet weak var uiViewFelicitation: UIView!
     
     @IBAction func actionButton1(_ sender: UIButton) {
         animationFlipFromLeft(card: sender, image: "hippo");
@@ -87,17 +90,28 @@ class LevelThreeViewController: UIViewController {
     
     private func animationFlipFromRight(card: UIButton, image: String){
         card.setBackgroundImage(retournImage(named: image), for: .normal)
-        UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil, completion: nil)
+        UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil){ (true) in
+            self.clearArray();
+        }
     }
     
+    private func clearArray(){
+        self.arrayCard = [];
+    }
     
     private func compare(sender: UIButton){
         arrayCard.append(sender)
         if arrayCard.count == 2 {
             if arrayCard[0].tag == arrayCard[1].tag{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
+                    self.clearArray();
+                    self.count += 1;
+                    if(self.count == 6){
+                        self.uiViewFelicitation.isHidden = false;
+                        self.view.bringSubview(toFront: self.uiViewFelicitation);
+                    }
                 })
             }else{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
@@ -105,15 +119,13 @@ class LevelThreeViewController: UIViewController {
                     self.animationFlipFromRight(card: self.arrayCard[1], image: "back_3")
                 })
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5, execute: {
-                self.arrayCard = [];
-            })
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.uiViewFelicitation.isHidden = true;
         // Do any additional setup after loading the view.
     }
 

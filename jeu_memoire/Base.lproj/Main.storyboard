@@ -137,8 +137,8 @@
                                     <action selector="actionButton6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="F2U-xB-t0h"/>
                                 </connections>
                             </button>
-                            <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIS-Sl-XZy">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                            <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIS-Sl-XZy" userLabel="view_felicitation">
+                                <rect key="frame" x="0.0" y="1" width="1024" height="1366"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="firework.png" translatesAutoresizingMaskIntoConstraints="NO" id="163-zb-IOO">
@@ -187,7 +187,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pMI-V0-dql"/>
                     <connections>
-                        <outlet property="uiButtonPlay" destination="4vl-At-bGc" id="08g-d4-Swt"/>
+                        <outlet property="uiViewFelicitation" destination="VIS-Sl-XZy" id="g8x-ka-Gol"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -270,9 +270,31 @@
                                     <action selector="actionButton8:" destination="1cm-3T-mPa" eventType="touchUpInside" id="6f9-LW-okw"/>
                                 </connections>
                             </button>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aD5-z3-GGQ" userLabel="view_felicitation">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uqg-nA-JBP">
+                                        <rect key="frame" x="317" y="691" width="390" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="control.png"/>
+                                        <connections>
+                                            <segue destination="esZ-6U-HEo" kind="show" id="90c-Xx-1KH"/>
+                                        </connections>
+                                    </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="firework.png" translatesAutoresizingMaskIntoConstraints="NO" id="9pZ-n0-cRU">
+                                        <rect key="frame" x="240" y="277" width="545" height="425"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.47192192799999999" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="uiViewFelicitation" destination="aD5-z3-GGQ" id="yuP-F7-7Sp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKv-By-zgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,9 +408,23 @@
                                     <action selector="actionButton12:" destination="esZ-6U-HEo" eventType="touchUpInside" id="8hn-k3-fiw"/>
                                 </connections>
                             </button>
+                            <view alpha="0.80000000000000004" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t9Y-qs-a6y" userLabel="view_felicitation">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="firework.png" translatesAutoresizingMaskIntoConstraints="NO" id="Gw5-e7-3fM">
+                                        <rect key="frame" x="239" y="470" width="545" height="425"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.96448771896709173" blue="0.24032991780996971" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="uiViewFelicitation" destination="t9Y-qs-a6y" id="1hd-cQ-FpS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MbQ-b2-YXH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
