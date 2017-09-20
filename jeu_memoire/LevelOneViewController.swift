@@ -34,7 +34,7 @@ class LevelOneViewController: UIViewController {
      
         animationFlipFromLeft(card: sender, image: image);
         compare(sender: sender)
-        
+         
     }
     
     
