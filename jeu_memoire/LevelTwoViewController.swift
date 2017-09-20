@@ -11,7 +11,14 @@ import AVFoundation
 
 class LevelTwoViewController: UIViewController {
 
+    
+    var arrayOfAnimalNames: [String]!
+    var arrayOfRandomAnimals = [String]()
+    
+    
     var arrayCard: [UIButton] = []
+    var arrayChosenCards = [String]()
+    
     var count: Int = 0;
     var player: AVAudioPlayer?
     
@@ -19,18 +26,10 @@ class LevelTwoViewController: UIViewController {
     
     @IBAction func actionCard(_ sender: UIButton) {
         
-        var image: String = "";
+        let image: String = arrayOfRandomAnimals[sender.tag];
         
-        switch sender.tag {
-            case 1:
-                image = "giraffe"
-            case 2:
-                image = "turtle"
-            case 3:
-                image = "monkey"
-            default:
-                image = "bee"
-        }
+        arrayChosenCards.append(image)
+        arrayCard.append(sender)
         
         animationFlipFromLeft(card: sender, image: image);
         compare(sender: sender)
@@ -71,13 +70,14 @@ class LevelTwoViewController: UIViewController {
     }
     
     private func clearArray(){
-        self.arrayCard = [];
+        self.arrayCard = []
+        self.arrayChosenCards = []
     }
     
     private func compare(sender: UIButton){
-        arrayCard.append(sender)
-        if arrayCard.count == 2 {
-            if arrayCard[0].tag == arrayCard[1].tag{
+        
+        if arrayChosenCards.count == 2 {
+            if arrayChosenCards[0] == arrayChosenCards[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
@@ -115,10 +115,24 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
+    func randomAnimals() {
+        let numberOfAnimals = arrayOfAnimalNames.count
+        for _ in 0..<numberOfAnimals {
+            let randomNumber =
+                Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+            arrayOfRandomAnimals.append(arrayOfAnimalNames[randomNumber])
+            arrayOfAnimalNames.remove(at: randomNumber)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.uiViewFelicitation.isHidden = true;
+        self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
+        
+        arrayOfAnimalNames = ["giraffe", "turtle", "monkey", "bee", "giraffe", "turtle", "monkey", "bee"]
+        randomAnimals()
         // Do any additional setup after loading the view.
     }
 

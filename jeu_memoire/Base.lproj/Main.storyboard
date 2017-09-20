@@ -6,8 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -95,46 +93,63 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6f-Rs-qB9" userLabel="card_12">
-                                <rect key="frame" x="574" y="50" width="400" height="400"/>
-                                <state key="normal" backgroundImage="back.png"/>
-                                <connections>
-                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QfM-F4-8Dq"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-fe-Ydi" userLabel="card_21">
-                                <rect key="frame" x="50" y="483" width="400" height="400"/>
-                                <state key="normal" backgroundImage="back.png"/>
-                                <connections>
-                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Gf-76-iVa"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHj-hP-Fvs" userLabel="card_22">
-                                <rect key="frame" x="574" y="483" width="400" height="400"/>
-                                <state key="normal" backgroundImage="back.png"/>
-                                <connections>
-                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rgu-B0-gaI"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-CH-brJ" userLabel="card_31">
-                                <rect key="frame" x="50" y="914" width="400" height="400"/>
-                                <state key="normal" backgroundImage="back.png"/>
-                                <connections>
-                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXD-gs-Pd4"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-q8-G1s" userLabel="card_11">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-q8-G1s" userLabel="card_11">
                                 <rect key="frame" x="50" y="50" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
                                     <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hJ2-PZ-rxV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poV-7N-Jvk" userLabel="card_33">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6f-Rs-qB9" userLabel="card_12">
+                                <rect key="frame" x="574" y="50" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="back.png"/>
+                                <connections>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QfM-F4-8Dq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-fe-Ydi" userLabel="card_21">
+                                <rect key="frame" x="50" y="483" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="back.png"/>
+                                <connections>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Gf-76-iVa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHj-hP-Fvs" userLabel="card_22">
+                                <rect key="frame" x="574" y="483" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="back.png"/>
+                                <connections>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rgu-B0-gaI"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-CH-brJ" userLabel="card_31">
+                                <rect key="frame" x="50" y="914" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="back.png"/>
+                                <connections>
+                                    <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DXD-gs-Pd4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poV-7N-Jvk" userLabel="card_32">
                                 <rect key="frame" x="574" y="914" width="400" height="400"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back.png"/>
                                 <connections>
                                     <action selector="actionCard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dts-hd-gA9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uoH-3e-x5q">
+                                <rect key="frame" x="10" y="10" width="100" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="eJg-jY-G0O" kind="show" id="GVB-X2-jl3"/>
                                 </connections>
                             </button>
                             <view alpha="0.84999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VIS-Sl-XZy" userLabel="view_felicitation">
@@ -158,35 +173,15 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.017023146472987527" green="1" blue="0.93771125547476286" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="eHj-hP-Fvs" firstAttribute="top" secondItem="V6f-Rs-qB9" secondAttribute="bottom" id="907-S0-hVL"/>
-                            <constraint firstItem="qoW-fe-Ydi" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="9Ck-aX-Rfu"/>
-                            <constraint firstItem="poV-7N-Jvk" firstAttribute="width" secondItem="c7N-q8-G1s" secondAttribute="width" id="Bz0-bs-do5"/>
-                            <constraint firstItem="c7N-q8-G1s" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.4" id="Dv8-AJ-FfL"/>
-                            <constraint firstItem="8e8-CH-brJ" firstAttribute="width" secondItem="c7N-q8-G1s" secondAttribute="width" id="IEB-7l-4H0"/>
-                            <constraint firstItem="c7N-q8-G1s" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="KzV-Qi-8LA"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="poV-7N-Jvk" secondAttribute="bottom" constant="52" id="N8D-Be-jUw"/>
-                            <constraint firstItem="c7N-q8-G1s" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="UoE-IL-hoH"/>
-                            <constraint firstItem="eHj-hP-Fvs" firstAttribute="width" secondItem="c7N-q8-G1s" secondAttribute="width" id="WH3-jE-PBr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V6f-Rs-qB9" secondAttribute="trailing" constant="30" id="WJI-ev-QCk"/>
-                            <constraint firstItem="V6f-Rs-qB9" firstAttribute="width" secondItem="c7N-q8-G1s" secondAttribute="width" id="aet-jK-6Gj"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="poV-7N-Jvk" secondAttribute="trailing" constant="30" id="eCx-kf-WdD"/>
-                            <constraint firstItem="qoW-fe-Ydi" firstAttribute="top" secondItem="c7N-q8-G1s" secondAttribute="bottom" id="gqj-Sb-aU3"/>
-                            <constraint firstItem="poV-7N-Jvk" firstAttribute="height" secondItem="c7N-q8-G1s" secondAttribute="height" id="gy5-Je-hw6"/>
-                            <constraint firstItem="8e8-CH-brJ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="j5Z-BI-sqR"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eHj-hP-Fvs" secondAttribute="trailing" constant="30" id="kU1-EC-4nk"/>
-                            <constraint firstItem="V6f-Rs-qB9" firstAttribute="height" secondItem="c7N-q8-G1s" secondAttribute="height" id="m2x-2h-b4t"/>
-                            <constraint firstItem="8e8-CH-brJ" firstAttribute="height" secondItem="c7N-q8-G1s" secondAttribute="height" id="oUD-Ty-uBO"/>
-                            <constraint firstItem="eHj-hP-Fvs" firstAttribute="height" secondItem="c7N-q8-G1s" secondAttribute="height" id="q6t-du-cRT"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="8e8-CH-brJ" secondAttribute="bottom" constant="52" id="rgv-Ne-5gp"/>
-                            <constraint firstItem="qoW-fe-Ydi" firstAttribute="height" secondItem="c7N-q8-G1s" secondAttribute="height" id="uxZ-Jh-o8c"/>
-                            <constraint firstItem="qoW-fe-Ydi" firstAttribute="width" secondItem="c7N-q8-G1s" secondAttribute="width" id="xUT-Ck-Ann"/>
-                            <constraint firstItem="c7N-q8-G1s" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="ycQ-2C-n8s"/>
-                            <constraint firstItem="V6f-Rs-qB9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="zvP-7d-pJU"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="pMI-V0-dql"/>
                     <connections>
+                        <outlet property="uiButtonCard11" destination="c7N-q8-G1s" id="nNr-u2-Lch"/>
+                        <outlet property="uiButtonCard12" destination="V6f-Rs-qB9" id="QHJ-X8-AJB"/>
+                        <outlet property="uiButtonCard21" destination="qoW-fe-Ydi" id="ZEv-Gi-TGk"/>
+                        <outlet property="uiButtonCard22" destination="eHj-hP-Fvs" id="1ie-0o-ueM"/>
+                        <outlet property="uiButtonCard31" destination="8e8-CH-brJ" id="idX-Z1-fGN"/>
+                        <outlet property="uiButtonCard32" destination="poV-7N-Jvk" id="EUQ-ah-dJG"/>
                         <outlet property="uiViewFelicitation" destination="VIS-Sl-XZy" id="g8x-ka-Gol"/>
                     </connections>
                 </viewController>
@@ -206,7 +201,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsY-ca-5J7" userLabel="card_11">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsY-ca-5J7" userLabel="card_11">
                                 <rect key="frame" x="50" y="50" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -214,7 +209,7 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="w3p-5t-snI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaV-OO-7gL" userLabel="card_12">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yaV-OO-7gL" userLabel="card_12">
                                 <rect key="frame" x="564" y="50" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -222,7 +217,7 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="Xbd-ju-cEt"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-jP-cil" userLabel="card_21">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1f2-jP-cil" userLabel="card_21">
                                 <rect key="frame" x="50" y="385" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -230,7 +225,7 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="RrY-hW-IPC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-Jv-7MT" userLabel="card_22">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-Jv-7MT" userLabel="card_22">
                                 <rect key="frame" x="564" y="385" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -246,7 +241,7 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="BsD-ff-wgA"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUX-0k-fXJ" userLabel="card_32">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iUX-0k-fXJ" userLabel="card_32">
                                 <rect key="frame" x="565" y="727" width="409" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -254,7 +249,7 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="s9R-PX-JO6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-2N-cA6" userLabel="card_41">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWF-2N-cA6" userLabel="card_41">
                                 <rect key="frame" x="50" y="1056" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -262,7 +257,7 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="yVO-rG-6wl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNv-bd-l70" userLabel="card_42">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNv-bd-l70" userLabel="card_42">
                                 <rect key="frame" x="564" y="1056" width="410" height="273"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_2.png"/>
@@ -312,7 +307,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZo-4O-sYx" userLabel="card_11">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uZo-4O-sYx" userLabel="card_11">
                                 <rect key="frame" x="50" y="50" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -336,7 +331,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="Gel-ER-nXL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI6-kC-fUv" userLabel="card_21">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DI6-kC-fUv" userLabel="card_21">
                                 <rect key="frame" x="54" y="403" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -344,7 +339,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="43N-c8-LNX"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxb-8K-Dcf" userLabel="card_22">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vxb-8K-Dcf" userLabel="card_22">
                                 <rect key="frame" x="371" y="403" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -360,7 +355,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="cea-qf-plO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbm-ld-vAt" userLabel="card_31">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nbm-ld-vAt" userLabel="card_31">
                                 <rect key="frame" x="52" y="719" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -368,7 +363,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="iiE-c1-Jen"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3Z-05-EPs" userLabel="card_32">
+                            <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x3Z-05-EPs" userLabel="card_32">
                                 <rect key="frame" x="369" y="719" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -376,7 +371,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="qJ0-W1-A59"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-qW-j1F" userLabel="card_33">
+                            <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J7D-qW-j1F" userLabel="card_33">
                                 <rect key="frame" x="718" y="719" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -384,7 +379,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="W22-od-xo6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQi-7F-tsV" userLabel="card_41">
+                            <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQi-7F-tsV" userLabel="card_41">
                                 <rect key="frame" x="56" y="1096" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -392,7 +387,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="BUS-S4-m8R"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-GD-4dZ" userLabel="card_42">
+                            <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cmx-GD-4dZ" userLabel="card_42">
                                 <rect key="frame" x="373" y="1096" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -400,7 +395,7 @@
                                     <action selector="actionCard:" destination="esZ-6U-HEo" eventType="touchUpInside" id="pqO-NX-dpc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-Kj-fzm" userLabel="card_43">
+                            <button opaque="NO" tag="11" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yf9-Kj-fzm" userLabel="card_43">
                                 <rect key="frame" x="722" y="1096" width="250" height="250"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="back_3.png"/>
@@ -438,4 +433,7 @@
         <image name="firework.png" width="595" height="640"/>
         <image name="play.png" width="640" height="640"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="GVB-X2-jl3"/>
+    </inferredMetricsTieBreakers>
 </document>

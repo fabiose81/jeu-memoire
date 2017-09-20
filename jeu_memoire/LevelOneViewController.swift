@@ -11,30 +11,38 @@ import AVFoundation
 
 class LevelOneViewController: UIViewController {
     
-    var arrayCard: [UIButton] = []
-    var count: Int = 0;
+    
+    @IBOutlet weak var uiButtonCard11: UIButton!
+    @IBOutlet weak var uiButtonCard12: UIButton!
+    @IBOutlet weak var uiButtonCard21: UIButton!
+    @IBOutlet weak var uiButtonCard22: UIButton!
+    @IBOutlet weak var uiButtonCard31: UIButton!
+    @IBOutlet weak var uiButtonCard32: UIButton!
     
     @IBOutlet weak var uiViewFelicitation: UIView!
+    
+    var arrayOfAnimalNames: [String]!
+    var arrayOfRandomAnimals = [String]()
+    
+    
+    var arrayCard: [UIButton] = []
+    var arrayChosenCards = [String]()
+   
+    var count: Int = 0;
+    
     var player: AVAudioPlayer?
     
     
     @IBAction func actionCard(_ sender: UIButton) {
+        let image: String = arrayOfRandomAnimals[sender.tag];
         
-        var image: String = "";
-        
-        switch sender.tag {
-            case 1:
-                image = "dog"
-            case 2:
-                image = "rabbit"
-            default:
-                image = "cat"
-        }
-       
-     
+        arrayChosenCards.append(image)
+        arrayCard.append(sender)
+
         animationFlipFromLeft(card: sender, image: image);
+        
+  
         compare(sender: sender)
-         
     }
     
     
@@ -72,12 +80,13 @@ class LevelOneViewController: UIViewController {
     
     private func clearArray(){
         self.arrayCard = [];
+        self.arrayChosenCards = [];
     }
     
     private func compare(sender: UIButton){
-        arrayCard.append(sender)
-        if arrayCard.count == 2 {
-            if arrayCard[0].tag == arrayCard[1].tag{
+        
+        if arrayChosenCards.count == 2 {
+            if arrayChosenCards[0] == arrayChosenCards[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
@@ -116,12 +125,28 @@ class LevelOneViewController: UIViewController {
         }
     }
 
+    
+    func randomAnimals() {
+        let numberOfAnimals = arrayOfAnimalNames.count
+        for _ in 0..<numberOfAnimals {
+            let randomNumber =
+                Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+            arrayOfRandomAnimals.append(arrayOfAnimalNames[randomNumber])
+            arrayOfAnimalNames.remove(at: randomNumber)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.uiViewFelicitation.isHidden = true;
         self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
-                // Do any additional setup after loading the view.     
+        
+        arrayOfAnimalNames = ["dog", "cat", "rabbit", "dog", "cat", "rabbit"]
+        randomAnimals()
+        // Do any additional setup after loading the view.  
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
