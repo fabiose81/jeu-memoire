@@ -112,9 +112,9 @@ class LevelTwoViewController: UIViewController {
                     self.clearArray();
                     self.count += 1;
                     if(self.count == 6){
-                       // self.uiViewFelicitation.isHidden = false;
-                       // self.view.bringSubview(toFront: self.uiViewFelicitation);
-                      //  self.animationScaleUp()
+                        self.uiViewFelicitation.isHidden = false;
+                        self.view.bringSubview(toFront: self.uiViewFelicitation);
+                        self.animationScaleUp()
                         //self.playSoundFelicitation()
                     }
                 })
@@ -155,8 +155,7 @@ class LevelTwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-       // self.uiViewFelicitation.isHidden = true;
-       // self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
+        self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         arrayOfAnimalNames = ["giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard", "giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard"]
         randomAnimals()

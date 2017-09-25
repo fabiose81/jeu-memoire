@@ -27,6 +27,8 @@
 		9B63D9B21F7966270004692F /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B63D9B11F7966270004692F /* bg.png */; };
 		9B63D9B41F796C300004692F /* bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B63D9B31F796C300004692F /* bg_2.png */; };
 		9B63D9B61F796ED00004692F /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B63D9B51F796ED00004692F /* bg_3.png */; };
+		9B63D9B81F79934F0004692F /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B63D9B71F79934F0004692F /* title.png */; };
+		9B63D9BB1F799C160004692F /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B63D9BA1F799C160004692F /* applause.mp3 */; };
 		9B643E191F6978EA00E2E2BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B643E181F6978EA00E2E2BF /* AppDelegate.swift */; };
 		9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */; };
 		9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E211F6978EA00E2E2BF /* LaunchScreen.storyboard */; };
@@ -54,6 +56,8 @@
 		9B63D9B11F7966270004692F /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = images/bg.png; sourceTree = "<group>"; };
 		9B63D9B31F796C300004692F /* bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_2.png; path = images/bg_2.png; sourceTree = "<group>"; };
 		9B63D9B51F796ED00004692F /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg_3.png; path = images/bg_3.png; sourceTree = "<group>"; };
+		9B63D9B71F79934F0004692F /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = title.png; path = images/title.png; sourceTree = "<group>"; };
+		9B63D9BA1F799C160004692F /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = applause.mp3; path = audio/applause.mp3; sourceTree = "<group>"; };
 		9B643E151F6978EA00E2E2BF /* jeu_memoire.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jeu_memoire.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B643E181F6978EA00E2E2BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 		9B63D9801F72BDE40004692F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9B63D9B71F79934F0004692F /* title.png */,
 				9B63D9B51F796ED00004692F /* bg_3.png */,
 				9B63D9B31F796C300004692F /* bg_2.png */,
 				9B63D9B11F7966270004692F /* bg.png */,
@@ -107,6 +112,14 @@
 			name = images;
 			sourceTree = "<group>";
 		};
+		9B63D9B91F799C090004692F /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				9B63D9BA1F799C160004692F /* applause.mp3 */,
+			);
+			name = audio;
+			sourceTree = "<group>";
+		};
 		9B643E0C1F6978E900E2E2BF = {
 			isa = PBXGroup;
 			children = (
@@ -126,6 +139,7 @@
 		9B643E171F6978EA00E2E2BF /* jeu_memoire */ = {
 			isa = PBXGroup;
 			children = (
+				9B63D9B91F799C090004692F /* audio */,
 				9B63D9801F72BDE40004692F /* images */,
 				9B63D97F1F72BDD70004692F /* viewController */,
 				9B643EE71F6DAD1200E2E2BF /* Main.storyboard */,
@@ -199,6 +213,7 @@
 			files = (
 				9B63D9A01F72BDF60004692F /* monkey.png in Resources */,
 				9B63D9991F72BDF60004692F /* cat.png in Resources */,
+				9B63D9B81F79934F0004692F /* title.png in Resources */,
 				9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */,
 				9B63D9B61F796ED00004692F /* bg_3.png in Resources */,
 				9B63D9B41F796C300004692F /* bg_2.png in Resources */,
@@ -209,6 +224,7 @@
 				9B63D99F1F72BDF60004692F /* leopard.png in Resources */,
 				9B63D99D1F72BDF60004692F /* giraffe.png in Resources */,
 				9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */,
+				9B63D9BB1F799C160004692F /* applause.mp3 in Resources */,
 				9B63D9A11F72BDF60004692F /* mouse.png in Resources */,
 				9B63D9B21F7966270004692F /* bg.png in Resources */,
 				9B63D9A31F72BDF60004692F /* play.png in Resources */,

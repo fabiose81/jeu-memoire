@@ -112,11 +112,11 @@ class LevelOneViewController: UIViewController {
                     self.clearArray();
                     self.count += 1;
                     if(self.count == 4){
-                      //  self.uiViewFelicitation.isHidden = false;
-                      //  self.view.bringSubview(toFront: self.uiViewFelicitation);
-                       // self.animationScaleUp()
+                        self.uiViewFelicitation.isHidden = false;
+                        self.view.bringSubview(toFront: self.uiViewFelicitation);
+                        self.animationScaleUp()
                         
-                        self.playSoundFelicitation()
+                       // self.player?.play()
                     }
                 })
             }else{
@@ -127,7 +127,7 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    func playSoundFelicitation(){
+    func initSoundFelicitation(){
         guard let url = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
         
         do {
@@ -135,9 +135,9 @@ class LevelOneViewController: UIViewController {
             try AVAudioSession.sharedInstance().setActive(true)
             
             player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
+            //guard let player = player else { return }
             
-            player.play()
+            //player.play()
         } catch let error {
             print(error.localizedDescription)
         }
@@ -156,15 +156,13 @@ class LevelOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       // self.uiViewFelicitation.isHidden = true;
-      //  self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
+        initSoundFelicitation()
+        
+        uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
-        randomAnimals()
-      
-        
-        
+        randomAnimals()        
     }
 
     override func didReceiveMemoryWarning() {
