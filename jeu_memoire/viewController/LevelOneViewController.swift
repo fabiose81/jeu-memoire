@@ -12,18 +12,10 @@ import AVFoundation
 class LevelOneViewController: UIViewController {
     
     
-    @IBOutlet weak var uiButtonCard11: UIButton!
-    @IBOutlet weak var uiButtonCard12: UIButton!
-    @IBOutlet weak var uiButtonCard21: UIButton!
-    @IBOutlet weak var uiButtonCard22: UIButton!
-    @IBOutlet weak var uiButtonCard31: UIButton!
-    @IBOutlet weak var uiButtonCard32: UIButton!
-    
     @IBOutlet weak var uiViewFelicitation: UIView!
     
     var arrayOfAnimalNames: [String]!
     var arrayOfRandomAnimals = [String]()
-    
     
     var arrayCard: [UIButton] = []
     var arrayChosenCards = [String]()
@@ -34,15 +26,19 @@ class LevelOneViewController: UIViewController {
     
     
     @IBAction func actionCard(_ sender: UIButton) {
+        
+        if arrayChosenCards.count == 2 {
+           return
+        }
+        
         let image: String = arrayOfRandomAnimals[sender.tag];
         
         arrayChosenCards.append(image)
         arrayCard.append(sender)
 
         animationFlipFromLeft(card: sender, image: image);
-        
-  
         compare(sender: sender)
+        
     }
     
     
@@ -78,13 +74,36 @@ class LevelOneViewController: UIViewController {
         }
     }
     
+    private func animationMoveRight(countAnimation: Int){
+            UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
+                self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x + 10
+                self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x + 10
+            }) { (true) in
+                let _countAnimation = countAnimation + 1
+                if _countAnimation < 11 {
+                     self.animationMoveLeft(countAnimation: _countAnimation)
+                }else{
+                    self.animationFlipFromRight(card: self.arrayCard[0], image: "front")
+                    self.animationFlipFromRight(card: self.arrayCard[1], image: "front")
+                }
+            }
+    }
+    
+    private func animationMoveLeft(countAnimation: Int){
+        UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
+           self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x - 10
+           self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x - 10
+        }) { (true) in
+            self.animationMoveRight(countAnimation: countAnimation)
+        }
+    }
+    
     private func clearArray(){
         self.arrayCard = [];
         self.arrayChosenCards = [];
     }
     
     private func compare(sender: UIButton){
-        
         if arrayChosenCards.count == 2 {
             if arrayChosenCards[0] == arrayChosenCards[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
@@ -92,18 +111,17 @@ class LevelOneViewController: UIViewController {
                     self.arrayCard[1].isHidden = true;
                     self.clearArray();
                     self.count += 1;
-                    if(self.count == 3){
-                        self.uiViewFelicitation.isHidden = false;
-                        self.view.bringSubview(toFront: self.uiViewFelicitation);
-                        self.animationScaleUp()
+                    if(self.count == 4){
+                      //  self.uiViewFelicitation.isHidden = false;
+                      //  self.view.bringSubview(toFront: self.uiViewFelicitation);
+                       // self.animationScaleUp()
                         
-                       // self.playSoundFelicitation()
+                        self.playSoundFelicitation()
                     }
                 })
             }else{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                    self.animationFlipFromRight(card: self.arrayCard[0], image: "back")
-                    self.animationFlipFromRight(card: self.arrayCard[1], image: "back")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    self.animationMoveRight(countAnimation: 1)
                 })
             }
         }
@@ -138,13 +156,13 @@ class LevelOneViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.uiViewFelicitation.isHidden = true;
-        self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
+       // self.uiViewFelicitation.isHidden = true;
+      //  self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
         
-        arrayOfAnimalNames = ["dog", "cat", "rabbit", "dog", "cat", "rabbit"]
+        arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
         randomAnimals()
-        // Do any additional setup after loading the view.  
+      
         
         
     }

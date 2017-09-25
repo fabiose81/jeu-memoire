@@ -26,6 +26,10 @@ class LevelTwoViewController: UIViewController {
     
     @IBAction func actionCard(_ sender: UIButton) {
         
+        if arrayChosenCards.count == 2 {
+            return
+        }
+        
         let image: String = arrayOfRandomAnimals[sender.tag];
         
         arrayChosenCards.append(image)
@@ -69,6 +73,30 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
+    private func animationMoveRight(countAnimation: Int){
+        UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
+            self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x + 10
+            self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x + 10
+        }) { (true) in
+            let _countAnimation = countAnimation + 1
+            if _countAnimation < 11 {
+                self.animationMoveLeft(countAnimation: _countAnimation)
+            }else{
+                self.animationFlipFromRight(card: self.arrayCard[0], image: "front")
+                self.animationFlipFromRight(card: self.arrayCard[1], image: "front")
+            }
+        }
+    }
+    
+    private func animationMoveLeft(countAnimation: Int){
+        UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
+            self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x - 10
+            self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x - 10
+        }) { (true) in
+            self.animationMoveRight(countAnimation: countAnimation)
+        }
+    }
+    
     private func clearArray(){
         self.arrayCard = []
         self.arrayChosenCards = []
@@ -83,17 +111,16 @@ class LevelTwoViewController: UIViewController {
                     self.arrayCard[1].isHidden = true;
                     self.clearArray();
                     self.count += 1;
-                    if(self.count == 4){
-                        self.uiViewFelicitation.isHidden = false;
-                        self.view.bringSubview(toFront: self.uiViewFelicitation);
-                        self.animationScaleUp()
+                    if(self.count == 6){
+                       // self.uiViewFelicitation.isHidden = false;
+                       // self.view.bringSubview(toFront: self.uiViewFelicitation);
+                      //  self.animationScaleUp()
                         //self.playSoundFelicitation()
                     }
                 })
             }else{
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                    self.animationFlipFromRight(card: self.arrayCard[0], image: "back_2")
-                    self.animationFlipFromRight(card: self.arrayCard[1], image: "back_2")
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    self.animationMoveRight(countAnimation: 1)
                 })
             }
         }
@@ -128,10 +155,10 @@ class LevelTwoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.uiViewFelicitation.isHidden = true;
-        self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
+       // self.uiViewFelicitation.isHidden = true;
+       // self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         
-        arrayOfAnimalNames = ["giraffe", "turtle", "monkey", "bee", "giraffe", "turtle", "monkey", "bee"]
+        arrayOfAnimalNames = ["giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard", "giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard"]
         randomAnimals()
         // Do any additional setup after loading the view.
     }

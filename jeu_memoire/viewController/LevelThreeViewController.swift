@@ -25,6 +25,10 @@ class LevelThreeViewController: UIViewController {
     
     @IBAction func actionCard(_ sender: UIButton) {
         
+        if arrayChosenCards.count == 2 {
+            return
+        }
+        
         let image: String = arrayOfRandomAnimals[sender.tag];
         
         arrayChosenCards.append(image)
@@ -90,8 +94,8 @@ class LevelThreeViewController: UIViewController {
                 })
             }else{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
-                    self.animationFlipFromRight(card: self.arrayCard[0], image: "back_3")
-                    self.animationFlipFromRight(card: self.arrayCard[1], image: "back_3")
+                    self.animationFlipFromRight(card: self.arrayCard[0], image: "front")
+                    self.animationFlipFromRight(card: self.arrayCard[1], image: "front")
                 })
             }
         }
