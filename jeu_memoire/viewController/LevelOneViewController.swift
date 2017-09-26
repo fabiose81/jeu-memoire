@@ -24,7 +24,6 @@ class LevelOneViewController: UIViewController {
     
     var player: AVAudioPlayer?
     
-    
     @IBAction func actionCard(_ sender: UIButton) {
         
         if arrayChosenCards.count == 2 {
@@ -32,6 +31,7 @@ class LevelOneViewController: UIViewController {
         }
         
         sender.isEnabled = false;
+        sender.adjustsImageWhenDisabled = false;
         
         let image: String = arrayOfRandomAnimals[sender.tag];
         
@@ -49,15 +49,18 @@ class LevelOneViewController: UIViewController {
     }
     
     private func animationFlipFromLeft(card: UIButton, image: String){
+        
         card.setBackgroundImage(retournImage(named: image), for: .normal)
-        UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
+        UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromLeft, animations: nil){ (true) in
+           
+        }
     }
     
     private func animationFlipFromRight(card: UIButton, image: String){
         card.setBackgroundImage(retournImage(named: image), for: .normal)
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil){ (true) in
+            card.isEnabled = true;
             self.clearArray();
-            card.isEnabled = true
         }
     }
     

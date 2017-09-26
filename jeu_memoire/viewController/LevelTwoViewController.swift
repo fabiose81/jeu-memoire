@@ -30,6 +30,9 @@ class LevelTwoViewController: UIViewController {
             return
         }
         
+        sender.isEnabled = false;
+        sender.adjustsImageWhenDisabled = false;
+        
         let image: String = arrayOfRandomAnimals[sender.tag];
         
         arrayChosenCards.append(image)
@@ -53,6 +56,7 @@ class LevelTwoViewController: UIViewController {
     private func animationFlipFromRight(card: UIButton, image: String){
         card.setBackgroundImage(retournImage(named: image), for: .normal)        
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil){ (true) in
+            card.isEnabled = true;
             self.clearArray();
         }
     }

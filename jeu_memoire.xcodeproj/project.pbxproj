@@ -35,6 +35,7 @@
 		9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EE71F6DAD1200E2E2BF /* Main.storyboard */; };
 		9B766A0B1F7AF74200D9B84D /* felicitation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0A1F7AF74200D9B84D /* felicitation.png */; };
 		9B766A0D1F7AFB5300D9B84D /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0C1F7AFB5300D9B84D /* home.png */; };
+		9B766A0F1F7B02E700D9B84D /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0E1F7B02E700D9B84D /* reload.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		9B643EE81F6DAD1200E2E2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9B766A0A1F7AF74200D9B84D /* felicitation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = felicitation.png; path = images/felicitation.png; sourceTree = "<group>"; };
 		9B766A0C1F7AFB5300D9B84D /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = images/home.png; sourceTree = "<group>"; };
+		9B766A0E1F7B02E700D9B84D /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload.png; path = images/reload.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		9B63D9801F72BDE40004692F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9B766A0E1F7B02E700D9B84D /* reload.png */,
 				9B766A0C1F7AFB5300D9B84D /* home.png */,
 				9B766A0A1F7AF74200D9B84D /* felicitation.png */,
 				9B63D9B71F79934F0004692F /* title.png */,
@@ -236,6 +239,7 @@
 				9B63D9B21F7966270004692F /* bg.png in Resources */,
 				9B63D9A31F72BDF60004692F /* play.png in Resources */,
 				9B63D9B01F792D250004692F /* front.png in Resources */,
+				9B766A0F1F7B02E700D9B84D /* reload.png in Resources */,
 				9B63D99E1F72BDF60004692F /* hippo.png in Resources */,
 				9B766A0D1F7AFB5300D9B84D /* home.png in Resources */,
 				9B63D99B1F72BDF60004692F /* dog.png in Resources */,
