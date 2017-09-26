@@ -31,6 +31,8 @@ class LevelOneViewController: UIViewController {
            return
         }
         
+        sender.isEnabled = false;
+        
         let image: String = arrayOfRandomAnimals[sender.tag];
         
         arrayChosenCards.append(image)
@@ -55,6 +57,7 @@ class LevelOneViewController: UIViewController {
         card.setBackgroundImage(retournImage(named: image), for: .normal)
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil){ (true) in
             self.clearArray();
+            card.isEnabled = true
         }
     }
     

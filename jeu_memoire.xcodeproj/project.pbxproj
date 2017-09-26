@@ -33,6 +33,8 @@
 		9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E1F1F6978EA00E2E2BF /* Assets.xcassets */; };
 		9B643E231F6978EA00E2E2BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643E211F6978EA00E2E2BF /* LaunchScreen.storyboard */; };
 		9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B643EE71F6DAD1200E2E2BF /* Main.storyboard */; };
+		9B766A0B1F7AF74200D9B84D /* felicitation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0A1F7AF74200D9B84D /* felicitation.png */; };
+		9B766A0D1F7AFB5300D9B84D /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0C1F7AFB5300D9B84D /* home.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +66,8 @@
 		9B643E221F6978EA00E2E2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B643E241F6978EA00E2E2BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9B643EE81F6DAD1200E2E2BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B766A0A1F7AF74200D9B84D /* felicitation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = felicitation.png; path = images/felicitation.png; sourceTree = "<group>"; };
+		9B766A0C1F7AFB5300D9B84D /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = images/home.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 		9B63D9801F72BDE40004692F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9B766A0C1F7AFB5300D9B84D /* home.png */,
+				9B766A0A1F7AF74200D9B84D /* felicitation.png */,
 				9B63D9B71F79934F0004692F /* title.png */,
 				9B63D9B51F796ED00004692F /* bg_3.png */,
 				9B63D9B31F796C300004692F /* bg_2.png */,
@@ -222,6 +228,7 @@
 				9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */,
 				9B63D9971F72BDF60004692F /* balloon.png in Resources */,
 				9B63D99F1F72BDF60004692F /* leopard.png in Resources */,
+				9B766A0B1F7AF74200D9B84D /* felicitation.png in Resources */,
 				9B63D99D1F72BDF60004692F /* giraffe.png in Resources */,
 				9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */,
 				9B63D9BB1F799C160004692F /* applause.mp3 in Resources */,
@@ -230,6 +237,7 @@
 				9B63D9A31F72BDF60004692F /* play.png in Resources */,
 				9B63D9B01F792D250004692F /* front.png in Resources */,
 				9B63D99E1F72BDF60004692F /* hippo.png in Resources */,
+				9B766A0D1F7AFB5300D9B84D /* home.png in Resources */,
 				9B63D99B1F72BDF60004692F /* dog.png in Resources */,
 				9B63D9A61F72BDF60004692F /* turtle.png in Resources */,
 				9B63D9A51F72BDF60004692F /* squirrel.png in Resources */,

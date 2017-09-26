@@ -18,9 +18,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var uiImageAnimation4: UIImageView!
     
     var arrayOfAnimalNames: [String]!
+    var arrayOfAnimalNames2: [String]!
     
     private func fadeInImage1(){
-        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.uiImageAnimation1.alpha = 0
         }) { (true) in
             self.fadeOutImage1()
@@ -28,7 +29,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeInImage2(){
-        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.uiImageAnimation2.alpha = 0
         }) { (true) in
             self.fadeOutImage2()
@@ -36,7 +37,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeInImage3(){
-        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.uiImageAnimation3.alpha = 0
         }) { (true) in
             self.fadeOutImage3()
@@ -44,7 +45,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeInImage4(){
-        UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
             self.uiImageAnimation4.alpha = 0
         }) { (true) in
             self.fadeOutImage4()
@@ -52,7 +53,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage1(){
-        uiImageAnimation1.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber()])
+        uiImageAnimation1.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber(flag: 1)])
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
             self.uiImageAnimation1.alpha = 1
@@ -62,7 +63,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage2(){
-        uiImageAnimation2.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber()])
+        uiImageAnimation2.image = retournImage(named: arrayOfAnimalNames2[retournRandomNumber(flag: 2)])
         
         UIView.animate(withDuration: 1.5, delay: 0.3, options: .curveEaseIn, animations: {
             self.uiImageAnimation2.alpha = 1
@@ -72,7 +73,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage3(){
-        uiImageAnimation3.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber()])
+        uiImageAnimation3.image = retournImage(named: arrayOfAnimalNames2[retournRandomNumber(flag: 2)])
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
             self.uiImageAnimation3.alpha = 1
@@ -82,7 +83,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage4(){
-        uiImageAnimation4.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber()])
+        uiImageAnimation4.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber(flag: 1)])
         
         UIView.animate(withDuration: 1.5, delay: 0.3, options: .curveEaseIn, animations: {
             self.uiImageAnimation4.alpha = 1
@@ -91,8 +92,11 @@ class MainViewController: UIViewController {
         }
     }
     
-    private func retournRandomNumber() -> Int{
-        return Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+    private func retournRandomNumber(flag: Int) -> Int{
+        if flag == 1 {
+           return Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+        }
+        return Int(arc4random_uniform(UInt32(arrayOfAnimalNames2.count)))
     }
     
     private func retournImage(named: String) -> UIImage{
@@ -102,7 +106,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard"]
+        arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "giraffe"]
+        arrayOfAnimalNames2 = ["hippo", "monkey", "squirrel", "mouse", "leopard"]
         
         fadeOutImage1()
         fadeOutImage2()
