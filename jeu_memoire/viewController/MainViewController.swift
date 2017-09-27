@@ -92,6 +92,24 @@ class MainViewController: UIViewController {
         }
     }
     
+    private func animationScaleUp()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (true) in
+            self.animationScaleDown()
+        }
+    }
+    
+    private func animationScaleDown()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            self.animationScaleUp()
+        }
+    }
+    
     private func retournRandomNumber(flag: Int) -> Int{
         if flag == 1 {
            return Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
@@ -106,6 +124,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        animationScaleUp()
+        
         arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "giraffe"]
         arrayOfAnimalNames2 = ["hippo", "monkey", "squirrel", "mouse", "leopard"]
         
@@ -113,6 +133,7 @@ class MainViewController: UIViewController {
         fadeOutImage2()
         fadeOutImage3()
         fadeOutImage4()
+        
      }
 
     override func didReceiveMemoryWarning() {

@@ -11,20 +11,20 @@ import AVFoundation
 
 class LevelTwoViewController: UIViewController {
 
-    
     var arrayOfAnimalNames: [String]!
     var arrayOfRandomAnimals = [String]()
-    
     
     var arrayCard: [UIButton] = []
     var arrayChosenCards = [String]()
     
-    var count: Int = 0;
+    var countFinishCards: Int = 0;
     var player: AVAudioPlayer?
     
+    @IBOutlet weak var uiButtonReplay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
     
-    @IBAction func actionCard(_ sender: UIButton) {
+    @IBAction func actionCard(_ sender: UIButton)
+    {
         
         if arrayChosenCards.count == 2 {
             return
@@ -44,16 +44,19 @@ class LevelTwoViewController: UIViewController {
     }
     
     
-    private func retournImage(named: String) -> UIImage{
+    private func retournImage(named: String) -> UIImage
+    {
         return UIImage(named: named)!
     }
     
-    private func animationFlipFromLeft(card: UIButton, image: String){
+    private func animationFlipFromLeft(card: UIButton, image: String)
+    {
         card.setBackgroundImage(retournImage(named: image), for: .normal)
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromLeft, animations: nil, completion: nil)
     }
     
-    private func animationFlipFromRight(card: UIButton, image: String){
+    private func animationFlipFromRight(card: UIButton, image: String)
+    {
         card.setBackgroundImage(retournImage(named: image), for: .normal)        
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil){ (true) in
             card.isEnabled = true;
@@ -62,7 +65,8 @@ class LevelTwoViewController: UIViewController {
     }
     
     private func animationScaleUp(){
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations:
+            {
             self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 2, y: 2)
         }) { (true) in
             self.animationScaleDown()
@@ -70,15 +74,17 @@ class LevelTwoViewController: UIViewController {
     }
     
     private func animationScaleDown(){
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations:
+            {
             self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (true) in
-            
+            self.buttonReplayAnimationScaleUp()
         }
     }
     
     private func animationMoveRight(countAnimation: Int){
-        UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations:
+            {
             self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x + 10
             self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x + 10
         }) { (true) in
@@ -92,7 +98,8 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
-    private func animationMoveLeft(countAnimation: Int){
+    private func animationMoveLeft(countAnimation: Int)
+    {
         UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
             self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x - 10
             self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x - 10
@@ -101,21 +108,40 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
-    private func clearArray(){
+    private func buttonReplayAnimationScaleUp()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            self.uiButtonReplay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (true) in
+            self.buttonReplayAnimationScaleDown()
+        }
+    }
+    
+    private func buttonReplayAnimationScaleDown()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.uiButtonReplay.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            self.buttonReplayAnimationScaleUp()
+        }
+    }
+    
+    private func clearArray()
+    {
         self.arrayCard = []
         self.arrayChosenCards = []
     }
     
-    private func compare(sender: UIButton){
-        
+    private func compare(sender: UIButton)
+    {
         if arrayChosenCards.count == 2 {
             if arrayChosenCards[0] == arrayChosenCards[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
                     self.clearArray();
-                    self.count += 1;
-                    if(self.count == 6){
+                    self.countFinishCards += 1;
+                    if(self.countFinishCards == 6){
                         self.uiViewFelicitation.isHidden = false;
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
                         self.animationScaleUp()
@@ -146,7 +172,8 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
-    func randomAnimals() {
+    func randomAnimals()
+    {
         let numberOfAnimals = arrayOfAnimalNames.count
         for _ in 0..<numberOfAnimals {
             let randomNumber =
@@ -156,7 +183,8 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
         self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)

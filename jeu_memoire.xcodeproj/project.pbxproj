@@ -36,6 +36,7 @@
 		9B766A0B1F7AF74200D9B84D /* felicitation.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0A1F7AF74200D9B84D /* felicitation.png */; };
 		9B766A0D1F7AFB5300D9B84D /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0C1F7AFB5300D9B84D /* home.png */; };
 		9B766A0F1F7B02E700D9B84D /* reload.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A0E1F7B02E700D9B84D /* reload.png */; };
+		9B766A131F7C04A600D9B84D /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A121F7C04A600D9B84D /* launch.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		9B766A0A1F7AF74200D9B84D /* felicitation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = felicitation.png; path = images/felicitation.png; sourceTree = "<group>"; };
 		9B766A0C1F7AFB5300D9B84D /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = home.png; path = images/home.png; sourceTree = "<group>"; };
 		9B766A0E1F7B02E700D9B84D /* reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reload.png; path = images/reload.png; sourceTree = "<group>"; };
+		9B766A121F7C04A600D9B84D /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = launch.png; path = images/launch.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		9B63D9801F72BDE40004692F /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9B766A121F7C04A600D9B84D /* launch.png */,
 				9B766A0E1F7B02E700D9B84D /* reload.png */,
 				9B766A0C1F7AFB5300D9B84D /* home.png */,
 				9B766A0A1F7AF74200D9B84D /* felicitation.png */,
@@ -232,6 +235,7 @@
 				9B63D9971F72BDF60004692F /* balloon.png in Resources */,
 				9B63D99F1F72BDF60004692F /* leopard.png in Resources */,
 				9B766A0B1F7AF74200D9B84D /* felicitation.png in Resources */,
+				9B766A131F7C04A600D9B84D /* launch.png in Resources */,
 				9B63D99D1F72BDF60004692F /* giraffe.png in Resources */,
 				9B643EE91F6DAD1200E2E2BF /* Main.storyboard in Resources */,
 				9B63D9BB1F799C160004692F /* applause.mp3 in Resources */,

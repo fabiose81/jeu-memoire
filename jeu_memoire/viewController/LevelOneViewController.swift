@@ -11,7 +11,7 @@ import AVFoundation
 
 class LevelOneViewController: UIViewController {
     
-    
+    @IBOutlet weak var uiButtonPlay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
     
     var arrayOfAnimalNames: [String]!
@@ -20,11 +20,12 @@ class LevelOneViewController: UIViewController {
     var arrayCard: [UIButton] = []
     var arrayChosenCards = [String]()
    
-    var count: Int = 0;
+    var countFinishCards: Int = 0;
     
     var player: AVAudioPlayer?
     
-    @IBAction func actionCard(_ sender: UIButton) {
+    @IBAction func actionCard(_ sender: UIButton)
+    {
         
         if arrayChosenCards.count == 2 {
            return
@@ -44,11 +45,13 @@ class LevelOneViewController: UIViewController {
     }
     
     
-    private func retournImage(named: String) -> UIImage{
+    private func retournImage(named: String) -> UIImage
+    {
         return UIImage(named: named)!
     }
     
-    private func animationFlipFromLeft(card: UIButton, image: String){
+    private func animationFlipFromLeft(card: UIButton, image: String)
+    {
         
         card.setBackgroundImage(retournImage(named: image), for: .normal)
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromLeft, animations: nil){ (true) in
@@ -56,7 +59,8 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    private func animationFlipFromRight(card: UIButton, image: String){
+    private func animationFlipFromRight(card: UIButton, image: String)
+    {
         card.setBackgroundImage(retournImage(named: image), for: .normal)
         UIView.transition(with: card, duration: 0.5, options: .transitionFlipFromRight, animations: nil){ (true) in
             card.isEnabled = true;
@@ -64,7 +68,8 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    private func animationScaleUp(){
+    private func animationScaleUp()
+    {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 2, y: 2)
         }) { (true) in
@@ -72,15 +77,17 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    private func animationScaleDown(){
+    private func animationScaleDown()
+    {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (true) in
-            
+             self.buttonPlayAnimationScaleUp()
         }
     }
     
-    private func animationMoveRight(countAnimation: Int){
+    private func animationMoveRight(countAnimation: Int)
+    {
             UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
                 self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x + 10
                 self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x + 10
@@ -95,7 +102,8 @@ class LevelOneViewController: UIViewController {
             }
     }
     
-    private func animationMoveLeft(countAnimation: Int){
+    private func animationMoveLeft(countAnimation: Int)
+    {
         UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations: {
            self.arrayCard[0].frame.origin.x = self.arrayCard[0].frame.origin.x - 10
            self.arrayCard[1].frame.origin.x = self.arrayCard[1].frame.origin.x - 10
@@ -104,20 +112,22 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    private func clearArray(){
+    private func clearArray()
+    {
         self.arrayCard = [];
         self.arrayChosenCards = [];
     }
     
-    private func compare(sender: UIButton){
+    private func compare(sender: UIButton)
+    {
         if arrayChosenCards.count == 2 {
             if arrayChosenCards[0] == arrayChosenCards[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
                     self.clearArray();
-                    self.count += 1;
-                    if(self.count == 4){
+                    self.countFinishCards += 1;
+                    if(self.countFinishCards == 4){
                         self.uiViewFelicitation.isHidden = false;
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
                         self.animationScaleUp()
@@ -133,7 +143,26 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    func initSoundFelicitation(){
+    private func buttonPlayAnimationScaleUp()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (true) in
+            self.buttonPlayAnimationScaleDown()
+        }
+    }
+    
+    private func buttonPlayAnimationScaleDown()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            self.buttonPlayAnimationScaleUp()
+        }
+    }
+    
+    func initSoundFelicitation()
+    {
         guard let url = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
         
         do {
@@ -150,23 +179,22 @@ class LevelOneViewController: UIViewController {
     }
 
     
-    func randomAnimals() {
+    func randomAnimals()
+    {
         let numberOfAnimals = arrayOfAnimalNames.count
         for _ in 0..<numberOfAnimals {
-            let randomNumber =
-                Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+            let randomNumber = Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
             arrayOfRandomAnimals.append(arrayOfAnimalNames[randomNumber])
             arrayOfAnimalNames.remove(at: randomNumber)
         }
     }
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         
         initSoundFelicitation()
-        
         uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
-        
         arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
         randomAnimals()        
     }

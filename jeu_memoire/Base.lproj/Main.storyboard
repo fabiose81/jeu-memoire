@@ -208,6 +208,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="pMI-V0-dql"/>
                     <connections>
+                        <outlet property="uiButtonPlay" destination="rio-uY-vM9" id="qMk-S9-nCF"/>
                         <outlet property="uiViewFelicitation" destination="QAT-yB-kRh" id="DA9-nY-jSI"/>
                     </connections>
                 </viewController>
@@ -230,37 +231,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_3.png" translatesAutoresizingMaskIntoConstraints="NO" id="aah-Uf-6En">
                                 <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                             </imageView>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyE-tp-d9H" userLabel="uiViewFelicitation">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="felicitation.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ctq-bh-fca">
-                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gQ-7R-sch">
-                                        <rect key="frame" x="590" y="1104" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="reload.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="fsc-OG-VLn"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNd-RU-yNl">
-                                        <rect key="frame" x="285" y="1104" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" backgroundImage="home.png">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="eJg-jY-G0O" kind="show" id="bTH-aK-h8c"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jsY-ca-5J7" userLabel="card_11">
                                 <rect key="frame" x="50" y="50" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -357,6 +327,37 @@
                                     <action selector="actionCard:" destination="1cm-3T-mPa" eventType="touchUpInside" id="2xf-ve-GLz"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uyE-tp-d9H" userLabel="uiViewFelicitation">
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="felicitation.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ctq-bh-fca">
+                                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gQ-7R-sch">
+                                        <rect key="frame" x="590" y="1114" width="130" height="130"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="reload.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="fsc-OG-VLn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNd-RU-yNl">
+                                        <rect key="frame" x="285" y="1104" width="150" height="150"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" backgroundImage="home.png">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="eJg-jY-G0O" kind="show" id="bTH-aK-h8c"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="aah-Uf-6En" firstAttribute="top" secondItem="o0h-h8-tiJ" secondAttribute="top" id="3dz-R5-vTY"/>
@@ -366,6 +367,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="uiButtonReplay" destination="9gQ-7R-sch" id="0lF-lI-0TW"/>
                         <outlet property="uiViewFelicitation" destination="uyE-tp-d9H" id="Jwe-oO-QYz"/>
                     </connections>
                 </viewController>
@@ -386,7 +388,7 @@
         <image name="title.png" width="1200" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BhB-ko-L3G"/>
         <segue reference="bTH-aK-h8c"/>
+        <segue reference="fsc-OG-VLn"/>
     </inferredMetricsTieBreakers>
 </document>
