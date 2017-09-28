@@ -92,8 +92,8 @@ class LevelTwoViewController: UIViewController {
             if _countAnimation < 11 {
                 self.animationMoveLeft(countAnimation: _countAnimation)
             }else{
-                self.animationFlipFromRight(card: self.arrayCard[0], image: "front")
-                self.animationFlipFromRight(card: self.arrayCard[1], image: "front")
+                self.animationFlipFromRight(card: self.arrayCard[0], image: "sun")
+                self.animationFlipFromRight(card: self.arrayCard[1], image: "sun")
             }
         }
     }

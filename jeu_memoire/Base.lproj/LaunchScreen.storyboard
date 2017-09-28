@@ -25,16 +25,12 @@
                                 <rect key="frame" x="53" y="78" width="293" height="206"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kids3.png" translatesAutoresizingMaskIntoConstraints="NO" id="xiT-xG-1YM">
-                                <rect key="frame" x="294" y="588" width="320" height="107"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kids.png" translatesAutoresizingMaskIntoConstraints="NO" id="c9w-eQ-ufW">
+                                <rect key="frame" x="719" y="1083" width="250" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="title-launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="3oY-oh-Q9A">
-                                <rect key="frame" x="261" y="679" width="502" height="99"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="kids.png" translatesAutoresizingMaskIntoConstraints="NO" id="c9w-eQ-ufW">
-                                <rect key="frame" x="719" y="1083" width="250" height="200"/>
+                                <rect key="frame" x="122" y="538" width="781" height="291"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -49,7 +45,6 @@
     <resources>
         <image name="kids.png" width="500" height="400"/>
         <image name="kids2.png" width="289" height="202"/>
-        <image name="kids3.png" width="640" height="214"/>
-        <image name="title-launch.png" width="1004" height="197"/>
+        <image name="title-launch.png" width="1077" height="402"/>
     </resources>
 </document>

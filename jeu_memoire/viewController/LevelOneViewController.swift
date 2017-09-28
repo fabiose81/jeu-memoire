@@ -22,7 +22,8 @@ class LevelOneViewController: UIViewController {
    
     var countFinishCards: Int = 0;
     
-    var player: AVAudioPlayer?
+    var playerFlipCard: AVAudioPlayer?
+    var playerFelicitation: AVAudioPlayer?
     
     @IBAction func actionCard(_ sender: UIButton)
     {
@@ -31,6 +32,7 @@ class LevelOneViewController: UIViewController {
            return
         }
         
+        playerFlipCard?.play()
         sender.isEnabled = false;
         sender.adjustsImageWhenDisabled = false;
         
@@ -42,6 +44,11 @@ class LevelOneViewController: UIViewController {
         animationFlipFromLeft(card: sender, image: image);
         compare(sender: sender)
         
+    }
+    
+    @IBAction func nextLevel(_ sender: UIButton)
+    {
+        playerFelicitation?.stop()
     }
     
     
@@ -96,8 +103,8 @@ class LevelOneViewController: UIViewController {
                 if _countAnimation < 11 {
                      self.animationMoveLeft(countAnimation: _countAnimation)
                 }else{
-                    self.animationFlipFromRight(card: self.arrayCard[0], image: "front")
-                    self.animationFlipFromRight(card: self.arrayCard[1], image: "front")
+                    self.animationFlipFromRight(card: self.arrayCard[0], image: "cloud")
+                    self.animationFlipFromRight(card: self.arrayCard[1], image: "cloud")
                 }
             }
     }
@@ -132,7 +139,7 @@ class LevelOneViewController: UIViewController {
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
                         self.animationScaleUp()
                         
-                       // self.player?.play()
+                        self.playerFelicitation?.play()
                     }
                 })
             }else{
@@ -161,18 +168,18 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    func initSoundFelicitation()
+    func initSound()
     {
-        guard let url = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
+        guard let urlFlipCard = Bundle.main.url(forResource: "flipcard", withExtension: "mp3") else { return }
+        guard let urlFelicitation = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            player = try AVAudioPlayer(contentsOf: url)
-            //guard let player = player else { return }
-            
-            //player.play()
+            playerFlipCard = try AVAudioPlayer(contentsOf: urlFlipCard)
+            playerFelicitation = try AVAudioPlayer(contentsOf: urlFelicitation)
+        
         } catch let error {
             print(error.localizedDescription)
         }
@@ -193,7 +200,7 @@ class LevelOneViewController: UIViewController {
     {
         super.viewDidLoad()
         
-        initSoundFelicitation()
+        initSound()
         uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
         randomAnimals()        
