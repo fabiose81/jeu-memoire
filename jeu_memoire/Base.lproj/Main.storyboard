@@ -118,7 +118,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="1cm-3T-mPa" kind="show" id="Fq6-1O-ZYF"/>
+                                            <action selector="nextLevel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rWS-a0-Lyt"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -131,7 +131,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c7N-q8-G1s" userLabel="card_11">
-                                <rect key="frame" x="142" y="20" width="300" height="300"/>
+                                <rect key="frame" x="140" y="20" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -139,7 +139,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6f-Rs-qB9" userLabel="card_12">
-                                <rect key="frame" x="574" y="20" width="300" height="300"/>
+                                <rect key="frame" x="570" y="20" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -147,7 +147,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qoW-fe-Ydi" userLabel="card_21">
-                                <rect key="frame" x="142" y="361" width="300" height="300"/>
+                                <rect key="frame" x="140" y="361" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -155,7 +155,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHj-hP-Fvs" userLabel="card_22">
-                                <rect key="frame" x="574" y="361" width="300" height="300"/>
+                                <rect key="frame" x="570" y="361" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -163,7 +163,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8e8-CH-brJ" userLabel="card_31">
-                                <rect key="frame" x="142" y="700" width="300" height="300"/>
+                                <rect key="frame" x="140" y="700" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -171,7 +171,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="poV-7N-Jvk" userLabel="card_32">
-                                <rect key="frame" x="574" y="700" width="300" height="300"/>
+                                <rect key="frame" x="570" y="700" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -179,7 +179,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LaN-9J-xyC" userLabel="card_41">
-                                <rect key="frame" x="142" y="1046" width="300" height="300"/>
+                                <rect key="frame" x="140" y="1046" width="300" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" backgroundImage="cloud.png"/>
                                 <connections>
@@ -210,6 +210,7 @@
                     <connections>
                         <outlet property="uiButtonPlay" destination="rio-uY-vM9" id="qMk-S9-nCF"/>
                         <outlet property="uiViewFelicitation" destination="QAT-yB-kRh" id="DA9-nY-jSI"/>
+                        <segue destination="1cm-3T-mPa" kind="show" identifier="level2" id="PD2-ma-fh7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -246,7 +247,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="fsc-OG-VLn"/>
+                                            <action selector="goLevel1:" destination="1cm-3T-mPa" eventType="touchUpInside" id="F6Z-2A-HRY"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cNd-RU-yNl">
@@ -256,7 +257,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="eJg-jY-G0O" kind="show" id="bTH-aK-h8c"/>
+                                            <action selector="goMain:" destination="1cm-3T-mPa" eventType="touchUpInside" id="n17-Lt-kRA"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -369,6 +370,8 @@
                     <connections>
                         <outlet property="uiButtonReplay" destination="9gQ-7R-sch" id="0lF-lI-0TW"/>
                         <outlet property="uiViewFelicitation" destination="uyE-tp-d9H" id="Jwe-oO-QYz"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="level1" id="Uvy-sB-YQP"/>
+                        <segue destination="eJg-jY-G0O" kind="show" identifier="main" id="BSr-yN-Ntk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gKv-By-zgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -389,7 +392,7 @@
         <image name="title.png" width="1443" height="469"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="BhB-ko-L3G"/>
-        <segue reference="bTH-aK-h8c"/>
+        <segue reference="Uvy-sB-YQP"/>
+        <segue reference="BSr-yN-Ntk"/>
     </inferredMetricsTieBreakers>
 </document>

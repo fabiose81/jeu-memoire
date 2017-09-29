@@ -2,8 +2,8 @@
 //  MainViewController.swift
 //  jeu_memoire
 //
-//  Created by eleves on 2017-09-16.
-//  Copyright © 2017 eleves. All rights reserved.
+//  Created by Fabio dos Santos Estrela on 2017-09-16.
+//  Copyright © 2017 Fabio dos Santos Estrela. All rights reserved.
 //
 
 import UIKit
@@ -17,8 +17,11 @@ class MainViewController: UIViewController {
     @IBOutlet weak var uiImageAnimation3: UIImageView!
     @IBOutlet weak var uiImageAnimation4: UIImageView!
     
-    var arrayOfAnimalNames: [String]!
-    var arrayOfAnimalNames2: [String]!
+    var animalNameList1: [String]!
+    var animalNameList2: [String]!
+    
+    
+    //-- Session code of animations fade
     
     private func fadeInImage1(){
         UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
@@ -53,7 +56,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage1(){
-        uiImageAnimation1.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber(flag: 1)])
+        uiImageAnimation1.image = retournImage(named: animalNameList1[retournRandomNumber(flag: 1)])
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
             self.uiImageAnimation1.alpha = 1
@@ -63,7 +66,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage2(){
-        uiImageAnimation2.image = retournImage(named: arrayOfAnimalNames2[retournRandomNumber(flag: 2)])
+        uiImageAnimation2.image = retournImage(named: animalNameList2[retournRandomNumber(flag: 2)])
         
         UIView.animate(withDuration: 1.5, delay: 0.3, options: .curveEaseIn, animations: {
             self.uiImageAnimation2.alpha = 1
@@ -73,7 +76,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage3(){
-        uiImageAnimation3.image = retournImage(named: arrayOfAnimalNames2[retournRandomNumber(flag: 2)])
+        uiImageAnimation3.image = retournImage(named: animalNameList2[retournRandomNumber(flag: 2)])
         
         UIView.animate(withDuration: 1.5, delay: 0, options: .curveEaseIn, animations: {
             self.uiImageAnimation3.alpha = 1
@@ -83,7 +86,7 @@ class MainViewController: UIViewController {
     }
     
     private func fadeOutImage4(){
-        uiImageAnimation4.image = retournImage(named: arrayOfAnimalNames[retournRandomNumber(flag: 1)])
+        uiImageAnimation4.image = retournImage(named: animalNameList1[retournRandomNumber(flag: 1)])
         
         UIView.animate(withDuration: 1.5, delay: 0.3, options: .curveEaseIn, animations: {
             self.uiImageAnimation4.alpha = 1
@@ -91,6 +94,11 @@ class MainViewController: UIViewController {
             self.fadeInImage4()
         }
     }
+    
+    //-----------------------------------
+    
+    
+    //-- Session code of animations scale
     
     private func animationScaleUp()
     {
@@ -110,11 +118,14 @@ class MainViewController: UIViewController {
         }
     }
     
+    //-----------------------------------
+    
+    
     private func retournRandomNumber(flag: Int) -> Int{
         if flag == 1 {
-           return Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
+           return Int(arc4random_uniform(UInt32(animalNameList1.count)))
         }
-        return Int(arc4random_uniform(UInt32(arrayOfAnimalNames2.count)))
+        return Int(arc4random_uniform(UInt32(animalNameList2.count)))
     }
     
     private func retournImage(named: String) -> UIImage{
@@ -126,8 +137,8 @@ class MainViewController: UIViewController {
 
         animationScaleUp()
         
-        arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "giraffe"]
-        arrayOfAnimalNames2 = ["hippo", "monkey", "squirrel", "mouse", "leopard"]
+        animalNameList1 = ["dog", "cat", "rabbit", "turtle", "giraffe"]
+        animalNameList2 = ["hippo", "monkey", "squirrel", "mouse", "leopard"]
         
         fadeOutImage1()
         fadeOutImage2()
@@ -135,12 +146,6 @@ class MainViewController: UIViewController {
         fadeOutImage4()
         
      }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     
     // MARK: - Navigation

@@ -2,8 +2,8 @@
 //  LevelOneViewController.swift
 //  jeu_memoire
 //
-//  Created by eleves on 2017-09-16.
-//  Copyright © 2017 eleves. All rights reserved.
+//  Created by Fabio dos Santos Estrela on 2017-09-16.
+//  Copyright © 2017 Fabio dos Santos Estrela. All rights reserved.
 //
 
 import UIKit
@@ -14,31 +14,35 @@ class LevelOneViewController: UIViewController {
     @IBOutlet weak var uiButtonPlay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
     
-    var arrayOfAnimalNames: [String]!
-    var arrayOfRandomAnimals = [String]()
+    var animalNameList: [String]!
+    var animalNameListRandom = [String]()
     
     var arrayCard: [UIButton] = []
-    var arrayChosenCards = [String]()
+    var arrayCardSelected = [String]()
    
     var countFinishCards: Int = 0;
     
     var playerFlipCard: AVAudioPlayer?
     var playerFelicitation: AVAudioPlayer?
     
+    
+    //-- Session code action when card is selected
+    
     @IBAction func actionCard(_ sender: UIButton)
     {
         
-        if arrayChosenCards.count == 2 {
+        if arrayCardSelected.count == 2 {
            return
         }
         
         playerFlipCard?.play()
+        
         sender.isEnabled = false;
         sender.adjustsImageWhenDisabled = false;
         
-        let image: String = arrayOfRandomAnimals[sender.tag];
+        let image: String = animalNameListRandom[sender.tag];
         
-        arrayChosenCards.append(image)
+        arrayCardSelected.append(image)
         arrayCard.append(sender)
 
         animationFlipFromLeft(card: sender, image: image);
@@ -46,16 +50,24 @@ class LevelOneViewController: UIViewController {
         
     }
     
+    //--------------------------------
+    
+    //-- Session code go to next level
+    
     @IBAction func nextLevel(_ sender: UIButton)
     {
         playerFelicitation?.stop()
+        performSegue(withIdentifier: "level2", sender: nil)
     }
     
+    //--------------------------------
     
     private func retournImage(named: String) -> UIImage
     {
         return UIImage(named: named)!
     }
+    
+    //-- Session code of animations flip
     
     private func animationFlipFromLeft(card: UIButton, image: String)
     {
@@ -75,6 +87,11 @@ class LevelOneViewController: UIViewController {
         }
     }
     
+    //--------------------------------
+    
+    
+    //-- Session code of animations scale
+    
     private func animationScaleUp()
     {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
@@ -92,6 +109,29 @@ class LevelOneViewController: UIViewController {
              self.buttonPlayAnimationScaleUp()
         }
     }
+    
+    private func buttonPlayAnimationScaleUp()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (true) in
+            self.buttonPlayAnimationScaleDown()
+        }
+    }
+    
+    private func buttonPlayAnimationScaleDown()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            self.buttonPlayAnimationScaleUp()
+        }
+    }
+    
+    //--------------------------------
+    
+    
+    //-- Session code of animations horizontal Move
     
     private func animationMoveRight(countAnimation: Int)
     {
@@ -119,16 +159,15 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    private func clearArray()
-    {
-        self.arrayCard = [];
-        self.arrayChosenCards = [];
-    }
+    //--------------------------------
+    
+    
+    //-- Session code compare cards selected
     
     private func compare(sender: UIButton)
     {
-        if arrayChosenCards.count == 2 {
-            if arrayChosenCards[0] == arrayChosenCards[1]{
+        if arrayCardSelected.count == 2 {
+            if arrayCardSelected[0] == arrayCardSelected[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
@@ -150,23 +189,10 @@ class LevelOneViewController: UIViewController {
         }
     }
     
-    private func buttonPlayAnimationScaleUp()
-    {
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
-            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        }) { (true) in
-            self.buttonPlayAnimationScaleDown()
-        }
-    }
+    //--------------------------------
     
-    private func buttonPlayAnimationScaleDown()
-    {
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-            self.uiButtonPlay.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }) { (true) in
-            self.buttonPlayAnimationScaleUp()
-        }
-    }
+ 
+    //-- Session code compare init sounds of game
     
     func initSound()
     {
@@ -185,15 +211,22 @@ class LevelOneViewController: UIViewController {
         }
     }
 
+    //--------------------------------
     
     func randomAnimals()
     {
-        let numberOfAnimals = arrayOfAnimalNames.count
+        let numberOfAnimals = animalNameList.count
         for _ in 0..<numberOfAnimals {
-            let randomNumber = Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
-            arrayOfRandomAnimals.append(arrayOfAnimalNames[randomNumber])
-            arrayOfAnimalNames.remove(at: randomNumber)
+            let randomNumber = Int(arc4random_uniform(UInt32(animalNameList.count)))
+            animalNameListRandom.append(animalNameList[randomNumber])
+            animalNameList.remove(at: randomNumber)
         }
+    }
+    
+    private func clearArray()
+    {
+        self.arrayCard = [];
+        self.arrayCardSelected = [];
     }
     
     override func viewDidLoad()
@@ -202,24 +235,8 @@ class LevelOneViewController: UIViewController {
         
         initSound()
         uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
-        arrayOfAnimalNames = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
+        animalNameList = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
         randomAnimals()        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    
 
 }

@@ -2,8 +2,8 @@
 //  LevelTwoViewController.swift
 //  jeu_memoire
 //
-//  Created by eleves on 2017-09-16.
-//  Copyright © 2017 eleves. All rights reserved.
+//  Created by Fabio dos Santos Estrela on 2017-09-16.
+//  Copyright © 2017 Fabio dos Santos Estrela. All rights reserved.
 //
 
 import UIKit
@@ -11,31 +11,37 @@ import AVFoundation
 
 class LevelTwoViewController: UIViewController {
 
-    var arrayOfAnimalNames: [String]!
-    var arrayOfRandomAnimals = [String]()
+    var animalNameList: [String]!
+    var animalNameListRandom = [String]()
     
     var arrayCard: [UIButton] = []
-    var arrayChosenCards = [String]()
+    var arrayCardSelected = [String]()
     
     var countFinishCards: Int = 0;
-    var player: AVAudioPlayer?
+    
+    var playerFlipCard: AVAudioPlayer?
+    var playerFelicitation: AVAudioPlayer?
     
     @IBOutlet weak var uiButtonReplay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
     
+    //-- Session code action when card is selected
+    
     @IBAction func actionCard(_ sender: UIButton)
     {
         
-        if arrayChosenCards.count == 2 {
+        if arrayCardSelected.count == 2 {
             return
         }
+        
+        playerFlipCard?.play()
         
         sender.isEnabled = false;
         sender.adjustsImageWhenDisabled = false;
         
-        let image: String = arrayOfRandomAnimals[sender.tag];
+        let image: String = animalNameListRandom[sender.tag];
         
-        arrayChosenCards.append(image)
+        arrayCardSelected.append(image)
         arrayCard.append(sender)
         
         animationFlipFromLeft(card: sender, image: image);
@@ -43,12 +49,33 @@ class LevelTwoViewController: UIViewController {
         
     }
     
+    //--------------------------------
+    
+    //-- Session code go to level 1
+    
+    @IBAction func goLevel1(_ sender: UIButton)
+    {
+        playerFelicitation?.stop()
+        performSegue(withIdentifier: "level1", sender: nil)
+    }
+    
+    //--------------------------------
+    
+    //-- Session code go to main
+    
+    @IBAction func goMain(_ sender: UIButton)
+    {
+        playerFelicitation?.stop()
+        performSegue(withIdentifier: "main", sender: nil)
+    }
     
     private func retournImage(named: String) -> UIImage
     {
         return UIImage(named: named)!
     }
     
+    //-- Session code of animations flip
+
     private func animationFlipFromLeft(card: UIButton, image: String)
     {
         card.setBackgroundImage(retournImage(named: image), for: .normal)
@@ -63,6 +90,11 @@ class LevelTwoViewController: UIViewController {
             self.clearArray();
         }
     }
+    
+    //--------------------------------
+    
+    
+    //-- Session code of animations scale
     
     private func animationScaleUp(){
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations:
@@ -81,6 +113,29 @@ class LevelTwoViewController: UIViewController {
             self.buttonReplayAnimationScaleUp()
         }
     }
+    
+    private func buttonReplayAnimationScaleUp()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
+            self.uiButtonReplay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        }) { (true) in
+            self.buttonReplayAnimationScaleDown()
+        }
+    }
+    
+    private func buttonReplayAnimationScaleDown()
+    {
+        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
+            self.uiButtonReplay.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }) { (true) in
+            self.buttonReplayAnimationScaleUp()
+        }
+    }
+    
+    //--------------------------------
+    
+    
+    //-- Session code of animations horizontal Move
     
     private func animationMoveRight(countAnimation: Int){
         UIView.animate(withDuration: 0.05, delay: 0, options: .curveEaseOut, animations:
@@ -108,34 +163,15 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
-    private func buttonReplayAnimationScaleUp()
-    {
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseIn, .allowUserInteraction], animations: {
-            self.uiButtonReplay.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
-        }) { (true) in
-            self.buttonReplayAnimationScaleDown()
-        }
-    }
+    //--------------------------------
     
-    private func buttonReplayAnimationScaleDown()
-    {
-        UIView.animate(withDuration: 0.4, delay: 0, options: [.curveEaseInOut, .allowUserInteraction], animations: {
-            self.uiButtonReplay.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }) { (true) in
-            self.buttonReplayAnimationScaleUp()
-        }
-    }
     
-    private func clearArray()
-    {
-        self.arrayCard = []
-        self.arrayChosenCards = []
-    }
+    //-- Session code compare cards selected
     
     private func compare(sender: UIButton)
     {
-        if arrayChosenCards.count == 2 {
-            if arrayChosenCards[0] == arrayChosenCards[1]{
+        if arrayCardSelected.count == 2 {
+            if arrayCardSelected[0] == arrayCardSelected[1]{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
@@ -145,7 +181,8 @@ class LevelTwoViewController: UIViewController {
                         self.uiViewFelicitation.isHidden = false;
                         self.view.bringSubview(toFront: self.uiViewFelicitation);
                         self.animationScaleUp()
-                        //self.playSoundFelicitation()
+                        
+                        self.playerFelicitation?.play()
                     }
                 })
             }else{
@@ -155,18 +192,24 @@ class LevelTwoViewController: UIViewController {
             }
         }
     }
+    
+    //--------------------------------
+    
+    
+    //-- Session code compare init sounds of game
 
-    func playSoundFelicitation(){
-        guard let url = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
+    func initSound()
+    {
+        guard let urlFlipCard = Bundle.main.url(forResource: "flipcard", withExtension: "mp3") else { return }
+        guard let urlFelicitation = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             try AVAudioSession.sharedInstance().setActive(true)
             
-            player = try AVAudioPlayer(contentsOf: url)
-            guard let player = player else { return }
+            playerFlipCard = try AVAudioPlayer(contentsOf: urlFlipCard)
+            playerFelicitation = try AVAudioPlayer(contentsOf: urlFelicitation)
             
-            player.play()
         } catch let error {
             print(error.localizedDescription)
         }
@@ -174,31 +217,31 @@ class LevelTwoViewController: UIViewController {
     
     func randomAnimals()
     {
-        let numberOfAnimals = arrayOfAnimalNames.count
+        let numberOfAnimals = animalNameList.count
         for _ in 0..<numberOfAnimals {
             let randomNumber =
-                Int(arc4random_uniform(UInt32(arrayOfAnimalNames.count)))
-            arrayOfRandomAnimals.append(arrayOfAnimalNames[randomNumber])
-            arrayOfAnimalNames.remove(at: randomNumber)
+                Int(arc4random_uniform(UInt32(animalNameList.count)))
+            animalNameListRandom.append(animalNameList[randomNumber])
+            animalNameList.remove(at: randomNumber)
         }
+    }
+    
+    private func clearArray()
+    {
+        self.arrayCard = [];
+        self.arrayCardSelected = [];
     }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
+        initSound()
         self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
-        
-        arrayOfAnimalNames = ["giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard", "giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard"]
+        animalNameList = ["giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard", "giraffe", "hippo", "monkey", "squirrel", "mouse", "leopard"]
         randomAnimals()
-        // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
 
     /*
     // MARK: - Navigation
