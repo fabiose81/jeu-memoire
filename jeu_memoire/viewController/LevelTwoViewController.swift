@@ -21,7 +21,10 @@ class LevelTwoViewController: UIViewController {
     
     var playerFlipCard: AVAudioPlayer?
     var playerFelicitation: AVAudioPlayer?
+    var playerBoing: AVAudioPlayer?
+    var playerPop: AVAudioPlayer?
     
+    @IBOutlet weak var uiButtonHome: UIButton!
     @IBOutlet weak var uiButtonReplay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
     
@@ -111,6 +114,7 @@ class LevelTwoViewController: UIViewController {
             self.uiViewFelicitation.transform = CGAffineTransform(scaleX: 1, y: 1)
         }) { (true) in
             self.buttonReplayAnimationScaleUp()
+            self.fadeInImageHome()
         }
     }
     
@@ -134,6 +138,26 @@ class LevelTwoViewController: UIViewController {
     
     //--------------------------------
     
+    
+    //-- Session code of animations fade
+    
+    private func fadeInImageHome(){
+        UIView.animate(withDuration: 1, delay: 0, options:  [.curveEaseIn, .allowUserInteraction], animations: {
+            self.uiButtonHome.alpha = 0
+        }) { (true) in
+            self.fadeOutImageHome()
+        }
+    }
+    
+    private func fadeOutImageHome(){
+        UIView.animate(withDuration: 1, delay: 0, options:  [.curveEaseOut, .allowUserInteraction], animations: {
+            self.uiButtonHome.alpha = 1
+        }) { (true) in
+            self.fadeInImageHome()
+        }
+    }
+    
+    //--------------------------------
     
     //-- Session code of animations horizontal Move
     
@@ -183,10 +207,13 @@ class LevelTwoViewController: UIViewController {
                         self.animationScaleUp()
                         
                         self.playerFelicitation?.play()
+                    }else{
+                        self.playerPop?.play();
                     }
                 })
             }else{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    self.playerBoing?.play()
                     self.animationMoveRight(countAnimation: 1)
                 })
             }
@@ -196,12 +223,14 @@ class LevelTwoViewController: UIViewController {
     //--------------------------------
     
     
-    //-- Session code compare init sounds of game
+    //-- Session code init sounds of game
 
     func initSound()
     {
         guard let urlFlipCard = Bundle.main.url(forResource: "flipcard", withExtension: "mp3") else { return }
         guard let urlFelicitation = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
+        guard let urlBoing = Bundle.main.url(forResource: "boing", withExtension: "wav") else { return }
+        guard let urlPop = Bundle.main.url(forResource: "poppyup", withExtension: "aiff") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -209,6 +238,8 @@ class LevelTwoViewController: UIViewController {
             
             playerFlipCard = try AVAudioPlayer(contentsOf: urlFlipCard)
             playerFelicitation = try AVAudioPlayer(contentsOf: urlFelicitation)
+            playerBoing = try AVAudioPlayer(contentsOf: urlBoing)
+            playerPop = try AVAudioPlayer(contentsOf: urlPop)
             
         } catch let error {
             print(error.localizedDescription)

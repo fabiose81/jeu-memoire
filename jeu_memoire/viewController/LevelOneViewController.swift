@@ -24,6 +24,8 @@ class LevelOneViewController: UIViewController {
     
     var playerFlipCard: AVAudioPlayer?
     var playerFelicitation: AVAudioPlayer?
+    var playerBoing: AVAudioPlayer?
+    var playerPop: AVAudioPlayer?
     
     
     //-- Session code action when card is selected
@@ -171,6 +173,7 @@ class LevelOneViewController: UIViewController {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.8, execute: {
                     self.arrayCard[0].isHidden = true;
                     self.arrayCard[1].isHidden = true;
+                    
                     self.clearArray();
                     self.countFinishCards += 1;
                     if(self.countFinishCards == 4){
@@ -179,10 +182,13 @@ class LevelOneViewController: UIViewController {
                         self.animationScaleUp()
                         
                         self.playerFelicitation?.play()
+                    }else{
+                        self.playerPop?.play();
                     }
                 })
             }else{
                 DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    self.playerBoing?.play()
                     self.animationMoveRight(countAnimation: 1)
                 })
             }
@@ -192,12 +198,14 @@ class LevelOneViewController: UIViewController {
     //--------------------------------
     
  
-    //-- Session code compare init sounds of game
+    //-- Session code init sounds of game
     
     func initSound()
     {
         guard let urlFlipCard = Bundle.main.url(forResource: "flipcard", withExtension: "mp3") else { return }
         guard let urlFelicitation = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
+        guard let urlBoing = Bundle.main.url(forResource: "boing", withExtension: "wav") else { return }
+        guard let urlPop = Bundle.main.url(forResource: "poppyup", withExtension: "aiff") else { return }
         
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -205,6 +213,8 @@ class LevelOneViewController: UIViewController {
             
             playerFlipCard = try AVAudioPlayer(contentsOf: urlFlipCard)
             playerFelicitation = try AVAudioPlayer(contentsOf: urlFelicitation)
+            playerBoing = try AVAudioPlayer(contentsOf: urlBoing)
+            playerPop = try AVAudioPlayer(contentsOf: urlPop)
         
         } catch let error {
             print(error.localizedDescription)
