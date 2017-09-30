@@ -228,7 +228,7 @@ class LevelTwoViewController: UIViewController {
     func initSound()
     {
         guard let urlFlipCard = Bundle.main.url(forResource: "flipcard", withExtension: "mp3") else { return }
-        guard let urlFelicitation = Bundle.main.url(forResource: "applause", withExtension: "mp3") else { return }
+        guard let urlFelicitation = Bundle.main.url(forResource: "applause", withExtension: "wav") else { return }
         guard let urlBoing = Bundle.main.url(forResource: "boing", withExtension: "wav") else { return }
         guard let urlPop = Bundle.main.url(forResource: "poppyup", withExtension: "aiff") else { return }
         

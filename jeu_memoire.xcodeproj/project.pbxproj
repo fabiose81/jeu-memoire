@@ -38,8 +38,9 @@
 		9B766A1F1F7D49B900D9B84D /* cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A1E1F7D49B900D9B84D /* cloud.png */; };
 		9B766A211F7D4A6A00D9B84D /* sun.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A201F7D4A6A00D9B84D /* sun.png */; };
 		9B766A231F7D545100D9B84D /* flipcard.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A221F7D545100D9B84D /* flipcard.mp3 */; };
-		9B766A251F7D558A00D9B84D /* applause.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A241F7D558A00D9B84D /* applause.mp3 */; };
 		9B766A271F7FD7D500D9B84D /* boing.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9B766A261F7FD7D500D9B84D /* boing.wav */; };
+		9BF557961F7FF2E200D7759D /* poppyup.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 9BF557951F7FF2E200D7759D /* poppyup.aiff */; };
+		9BF557981F7FFAD300D7759D /* applause.wav in Resources */ = {isa = PBXBuildFile; fileRef = 9BF557971F7FFAD300D7759D /* applause.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +77,9 @@
 		9B766A1E1F7D49B900D9B84D /* cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = cloud.png; path = images/cloud.png; sourceTree = "<group>"; };
 		9B766A201F7D4A6A00D9B84D /* sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = sun.png; path = images/sun.png; sourceTree = "<group>"; };
 		9B766A221F7D545100D9B84D /* flipcard.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = flipcard.mp3; path = audio/flipcard.mp3; sourceTree = "<group>"; };
-		9B766A241F7D558A00D9B84D /* applause.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = applause.mp3; path = audio/applause.mp3; sourceTree = "<group>"; };
 		9B766A261F7FD7D500D9B84D /* boing.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = boing.wav; path = audio/boing.wav; sourceTree = "<group>"; };
+		9BF557951F7FF2E200D7759D /* poppyup.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = poppyup.aiff; path = audio/poppyup.aiff; sourceTree = "<group>"; };
+		9BF557971F7FFAD300D7759D /* applause.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = applause.wav; path = audio/applause.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,8 +136,9 @@
 		9B63D9B91F799C090004692F /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				9BF557971F7FFAD300D7759D /* applause.wav */,
+				9BF557951F7FF2E200D7759D /* poppyup.aiff */,
 				9B766A261F7FD7D500D9B84D /* boing.wav */,
-				9B766A241F7D558A00D9B84D /* applause.mp3 */,
 				9B766A221F7D545100D9B84D /* flipcard.mp3 */,
 			);
 			name = audio;
@@ -243,10 +246,11 @@
 				9B63D9B41F796C300004692F /* bg_2.png in Resources */,
 				9B63D9A41F72BDF60004692F /* rabbit.png in Resources */,
 				9B766A271F7FD7D500D9B84D /* boing.wav in Resources */,
+				9BF557981F7FFAD300D7759D /* applause.wav in Resources */,
 				9B643E201F6978EA00E2E2BF /* Assets.xcassets in Resources */,
 				9B63D99F1F72BDF60004692F /* leopard.png in Resources */,
 				9B766A231F7D545100D9B84D /* flipcard.mp3 in Resources */,
-				9B766A251F7D558A00D9B84D /* applause.mp3 in Resources */,
+				9BF557961F7FF2E200D7759D /* poppyup.aiff in Resources */,
 				9B766A0B1F7AF74200D9B84D /* felicitation.png in Resources */,
 				9B63D99D1F72BDF60004692F /* giraffe.png in Resources */,
 				9B766A1D1F7C16AD00D9B84D /* title-launch.png in Resources */,
