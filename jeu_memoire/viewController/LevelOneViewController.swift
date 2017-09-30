@@ -59,6 +59,9 @@ class LevelOneViewController: UIViewController {
     @IBAction func nextLevel(_ sender: UIButton)
     {
         playerFelicitation?.stop()
+        playerFlipCard?.stop()
+        playerBoing?.stop()
+        playerPop?.stop()
         performSegue(withIdentifier: "level2", sender: nil)
     }
     
@@ -244,6 +247,11 @@ class LevelOneViewController: UIViewController {
         super.viewDidLoad()
         
         initSound()
+        playerFlipCard?.setVolume(0, fadeDuration: 0)
+        playerFlipCard?.play()
+        playerFlipCard?.stop()
+        playerFlipCard?.setVolume(1.0, fadeDuration: 0)
+        
         uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         animalNameList = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]
         randomAnimals()        
