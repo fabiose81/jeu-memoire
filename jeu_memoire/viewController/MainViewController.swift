@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import AVFoundation
 
 class MainViewController: UIViewController {
 
+    //-- Session code of variable
+    
     @IBOutlet weak var uiButtonPlay: UIButton!
     
     @IBOutlet weak var uiImageAnimation1: UIImageView!
@@ -19,6 +22,10 @@ class MainViewController: UIViewController {
     
     var animalNameList1: [String]!
     var animalNameList2: [String]!
+    
+    var playerBackground: AVAudioPlayer?
+    
+    //-----------------------------------
     
     
     //-- Session code of animations fade
@@ -132,8 +139,30 @@ class MainViewController: UIViewController {
         return UIImage(named: named)!
     }
     
+    //-- Session code init sounds of game
+    
+    func initSound()
+    {
+        guard let urlBackground = Bundle.main.url(forResource: "background", withExtension: "mp3") else { return }
+        
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            try AVAudioSession.sharedInstance().setActive(true)
+            
+            playerBackground = try AVAudioPlayer(contentsOf: urlBackground)
+            playerBackground?.setVolume(0.5, fadeDuration: 0)
+            playerBackground?.play()
+            
+            
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        initSound()
 
         animationScaleUp()
         

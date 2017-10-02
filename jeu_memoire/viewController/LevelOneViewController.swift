@@ -11,6 +11,8 @@ import AVFoundation
 
 class LevelOneViewController: UIViewController {
     
+    //-- Session code of variable
+    
     @IBOutlet weak var uiButtonPlay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
     
@@ -27,6 +29,7 @@ class LevelOneViewController: UIViewController {
     var playerBoing: AVAudioPlayer?
     var playerPop: AVAudioPlayer?
     
+    //--------------------------------
     
     //-- Session code action when card is selected
     
@@ -226,6 +229,9 @@ class LevelOneViewController: UIViewController {
 
     //--------------------------------
     
+    
+    //-- Session code put random animal name in array
+    
     func randomAnimals()
     {
         let numberOfAnimals = animalNameList.count
@@ -236,21 +242,23 @@ class LevelOneViewController: UIViewController {
         }
     }
     
+    //--------------------------------
+    
+    //-- Session code set empty array
+    
     private func clearArray()
     {
         self.arrayCard = [];
         self.arrayCardSelected = [];
     }
     
+    //--------------------------------
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         initSound()
-        playerFlipCard?.setVolume(0, fadeDuration: 0)
-        playerFlipCard?.play()
-        playerFlipCard?.stop()
-        playerFlipCard?.setVolume(1.0, fadeDuration: 0)
         
         uiViewFelicitation.transform = CGAffineTransform(scaleX: 0, y: 0)
         animalNameList = ["dog", "cat", "rabbit", "turtle", "dog", "cat", "rabbit", "turtle"]

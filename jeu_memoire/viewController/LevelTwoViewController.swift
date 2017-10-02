@@ -11,6 +11,8 @@ import AVFoundation
 
 class LevelTwoViewController: UIViewController {
 
+    //-- Session code of variable
+    
     var animalNameList: [String]!
     var animalNameListRandom = [String]()
     
@@ -27,6 +29,8 @@ class LevelTwoViewController: UIViewController {
     @IBOutlet weak var uiButtonHome: UIButton!
     @IBOutlet weak var uiButtonReplay: UIButton!
     @IBOutlet weak var uiViewFelicitation: UIView!
+    
+    //--------------------------------
     
     //-- Session code action when card is selected
     
@@ -246,6 +250,8 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
+     //-- Session code put random animal name in array
+    
     func randomAnimals()
     {
         let numberOfAnimals = animalNameList.count
@@ -257,11 +263,17 @@ class LevelTwoViewController: UIViewController {
         }
     }
     
+    //--------------------------------
+    
+    //-- Session code set empty array
+    
     private func clearArray()
     {
         self.arrayCard = [];
         self.arrayCardSelected = [];
     }
+    
+    //--------------------------------
     
     override func viewDidLoad()
     {

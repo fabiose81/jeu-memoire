@@ -50,6 +50,7 @@
 		9BF557E31F80198B00D7759D /* Icon-App-40x40@1x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF557E11F80198B00D7759D /* Icon-App-40x40@1x.png */; };
 		9BF557E41F80198B00D7759D /* Icon-App-40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF557E21F80198B00D7759D /* Icon-App-40x40@2x.png */; };
 		9BF557E61F8019B800D7759D /* Icon-App-83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9BF557E51F8019B800D7759D /* Icon-App-83.5x83.5@2x.png */; };
+		9BF557E81F82677700D7759D /* background.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 9BF557E71F82677700D7759D /* background.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +99,7 @@
 		9BF557E11F80198B00D7759D /* Icon-App-40x40@1x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-40x40@1x.png"; path = "images/App-icon/AppIcon.appiconset/Icon-App-40x40@1x.png"; sourceTree = "<group>"; };
 		9BF557E21F80198B00D7759D /* Icon-App-40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-40x40@2x.png"; path = "images/App-icon/AppIcon.appiconset/Icon-App-40x40@2x.png"; sourceTree = "<group>"; };
 		9BF557E51F8019B800D7759D /* Icon-App-83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-App-83.5x83.5@2x.png"; path = "images/App-icon/AppIcon.appiconset/Icon-App-83.5x83.5@2x.png"; sourceTree = "<group>"; };
+		9BF557E71F82677700D7759D /* background.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = background.mp3; path = audio/background.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 		9B63D9B91F799C090004692F /* audio */ = {
 			isa = PBXGroup;
 			children = (
+				9BF557E71F82677700D7759D /* background.mp3 */,
 				9BF557971F7FFAD300D7759D /* applause.wav */,
 				9BF557951F7FF2E200D7759D /* poppyup.aiff */,
 				9B766A261F7FD7D500D9B84D /* boing.wav */,
@@ -298,6 +301,7 @@
 				9BF557D71F80190100D7759D /* Icon-App-20x20@1x.png in Resources */,
 				9BF557E61F8019B800D7759D /* Icon-App-83.5x83.5@2x.png in Resources */,
 				9BF557E41F80198B00D7759D /* Icon-App-40x40@2x.png in Resources */,
+				9BF557E81F82677700D7759D /* background.mp3 in Resources */,
 				9B63D99B1F72BDF60004692F /* dog.png in Resources */,
 				9B63D9A61F72BDF60004692F /* turtle.png in Resources */,
 				9B63D9A51F72BDF60004692F /* squirrel.png in Resources */,
