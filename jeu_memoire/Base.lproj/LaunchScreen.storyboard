@@ -27,7 +27,7 @@
                                 <rect key="frame" x="50" y="60" width="205" height="191"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title-launch.png" translatesAutoresizingMaskIntoConstraints="NO" id="3oY-oh-Q9A">
-                                <rect key="frame" x="153.5" y="546.5" width="717" height="273"/>
+                                <rect key="frame" x="154" y="547" width="717" height="273"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kids.png" translatesAutoresizingMaskIntoConstraints="NO" id="c9w-eQ-ufW">
                                 <rect key="frame" x="751" y="1081" width="205" height="205"/>
@@ -58,6 +58,6 @@
     <resources>
         <image name="kids.png" width="500" height="400"/>
         <image name="kids2.png" width="289" height="202"/>
-        <image name="title-launch.png" width="1077" height="402"/>
+        <image name="title-launch.png" width="1331" height="473"/>
     </resources>
 </document>
