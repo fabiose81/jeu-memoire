@@ -13,23 +13,28 @@ class LevelTwoViewController: UIViewController {
 
     //-- Session code of variable
     
+    //-- Variable pour l'interface
+    @IBOutlet weak var uiButtonHome: UIButton!
+    @IBOutlet weak var uiButtonReplay: UIButton!
+    @IBOutlet weak var uiViewFelicitation: UIView!
+    
+    //-- Variable pour le tableau des animaux
     var animalNameList: [String]!
     var animalNameListRandom = [String]()
     
+    //-- Variable pour les cartes
     var arrayCard: [UIButton] = []
     var arrayCardSelected = [String]()
     
-    var countFinishCards: Int = 0;
-    
+    //-- Variable pour le audio
     var playerFlipCard: AVAudioPlayer?
     var playerFelicitation: AVAudioPlayer?
     var playerBoing: AVAudioPlayer?
     var playerPop: AVAudioPlayer?
     
-    @IBOutlet weak var uiButtonHome: UIButton!
-    @IBOutlet weak var uiButtonReplay: UIButton!
-    @IBOutlet weak var uiViewFelicitation: UIView!
-    
+    //-- Variable pour finir le jeu
+    var countFinishCards: Int = 0;
+        
     //--------------------------------
     
     //-- Session code action when card is selected

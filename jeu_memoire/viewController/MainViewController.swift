@@ -13,16 +13,18 @@ class MainViewController: UIViewController {
 
     //-- Session code of variable
     
+    //-- Variable pour l'interface
     @IBOutlet weak var uiButtonPlay: UIButton!
-    
     @IBOutlet weak var uiImageAnimation1: UIImageView!
     @IBOutlet weak var uiImageAnimation2: UIImageView!
     @IBOutlet weak var uiImageAnimation3: UIImageView!
     @IBOutlet weak var uiImageAnimation4: UIImageView!
     
+    //-- Variable pour le tableau des animaux
     var animalNameList1: [String]!
     var animalNameList2: [String]!
     
+    //-- Variable pour le audio
     var playerBackground: AVAudioPlayer?
     
     //-----------------------------------
@@ -150,7 +152,7 @@ class MainViewController: UIViewController {
             try AVAudioSession.sharedInstance().setActive(true)
             
             playerBackground = try AVAudioPlayer(contentsOf: urlBackground)
-            playerBackground?.setVolume(0.5, fadeDuration: 0)
+            playerBackground?.setVolume(0.7, fadeDuration: 0)
             playerBackground?.play()
             
             
